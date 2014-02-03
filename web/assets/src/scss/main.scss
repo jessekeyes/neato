@@ -1,7 +1,12 @@
 @import "bourbon/bourbon";
-@import "grid-settings";
+@import "settings";
 @import "neat/neat";
+@import "constants";
+
+//optional includes
+@import "typography/all";
 @import "responsive";
+@import "icons";
 
 section {
 	&#the-grid { 
@@ -12,7 +17,7 @@ section {
 			&.double {
 				@include span-columns(6);
 			}
-			&.triple {
+			&.triple { 
 				@include span-columns(4);
 			}
 			&.fourths {

@@ -4,7 +4,7 @@
 	&>div {
 		@include media($mobile) {
 			width: 100% !important;
-			float: none !important;
+			float: none !important; 
 			clear: both;
 			margin: 0;
 		}

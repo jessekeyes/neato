@@ -1,0 +1,11 @@
+@import "neat/neat-helpers";
+
+// file paths
+$root_path:                 "../../"; // path to HTML document root (relative from CSS)
+$images_path:               "assets/img/"; // path to images (relative from $root_path)
+$fonts_path:                "assets/fonts/"; // path to fonts (relative from $root_path)
+
+
+// breakpoints
+$tablet: new-breakpoint(max-width 768px 8);
+$mobile: new-breakpoint(max-width 480px 4);
