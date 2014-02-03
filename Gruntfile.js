@@ -13,13 +13,14 @@ module.exports = function(grunt) {
       build: {
         files: [{
           expand: true,
-          src: ['<%= pkg.src %>scss/*.scss'],
+          cwd: '<%= pkg.src %>/scss',
+          src: ['*.scss'],
           dest: '<%= pkg.css %>',
           ext: '.css'
         }]
       }
     }
-  });
+  }); 
 
   // Load the plugins
   grunt.loadNpmTasks('grunt-contrib-watch');

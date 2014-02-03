@@ -1,0 +1,12 @@
+@import "bourbon/bourbon";
+@import "neat/neat";
+
+section {
+	&#the-grid { 
+		@include outer-container;
+		border: #333 solid 2px;
+		div {
+			border: #ccc solid 2px;
+		}
+	}
+}
