@@ -1,5 +1,7 @@
 @import "bourbon/bourbon";
+@import "grid-settings";
 @import "neat/neat";
+@import "responsive";
 
 section {
 	&#the-grid { 
@@ -7,6 +9,19 @@ section {
 		border: #333 solid 2px;
 		div {
 			border: #ccc solid 2px;
+			&.double {
+				@include span-columns(6);
+			}
+			&.triple {
+				@include span-columns(4);
+			}
+			&.fourths {
+				@include span-columns(3);
+				@include media($tablet) {
+					@include span-columns(4);
+					@include omega(3n);
+				}
+			}
 		}
 	}
 }

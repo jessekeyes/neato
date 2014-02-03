@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     watch: {
       css: {
-        files: '<%= pkg.src %>scss/*.scss',
+        files: '<%= pkg.src %>/scss/*.scss',
         tasks: 'sass:build'
       }
     },

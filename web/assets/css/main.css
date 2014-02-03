@@ -3,6 +3,13 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
+@media screen and (max-width: 480px) {
+  .row > div {
+    width: 100% !important;
+    float: none !important;
+    clear: both;
+    margin: 0; } }
+
 section#the-grid {
   *zoom: 1;
   max-width: 68em;
@@ -16,3 +23,36 @@ section#the-grid {
     clear: both; }
   section#the-grid div {
     border: #ccc solid 2px; }
+    section#the-grid div.double {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 48.82117%; }
+      section#the-grid div.double:last-child {
+        margin-right: 0; }
+    section#the-grid div.triple {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 31.76157%; }
+      section#the-grid div.triple:last-child {
+        margin-right: 0; }
+    section#the-grid div.fourths {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 23.23176%; }
+      section#the-grid div.fourths:last-child {
+        margin-right: 0; }
+      @media screen and (max-width: 768px) {
+        section#the-grid div.fourths {
+          float: left;
+          display: block;
+          margin-right: 3.57866%;
+          width: 48.21067%; }
+          section#the-grid div.fourths:last-child {
+            margin-right: 0; }
+          section#the-grid div.fourths:nth-child(3n) {
+            margin-right: 0; }
+          section#the-grid div.fourths:nth-child(3n+1) {
+            clear: left; } }
