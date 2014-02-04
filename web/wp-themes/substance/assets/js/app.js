@@ -1,0 +1,2 @@
+/*! project 2014-02-04 */
+var waitForFinalEvent=function(){var timers={};return function(callback,ms,uniqueId){uniqueId||(uniqueId="Don't call this twice without a uniqueId"),timers[uniqueId]&&clearTimeout(timers[uniqueId]),timers[uniqueId]=setTimeout(callback,ms)}}();$(window).on("load resize orientationchange",function(){waitForFinalEvent(function(){},250)});

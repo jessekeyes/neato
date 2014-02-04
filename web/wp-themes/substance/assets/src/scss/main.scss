@@ -1,0 +1,19 @@
+@import "bourbon/bourbon";
+@import "settings";
+@import "neat/neat";
+
+//base and resets
+@import "base/all";
+
+@import "constants";
+
+//optional includes
+@import "typography/all";
+@import "icons";
+@import "sticky-footer";
+
+//starter theme, please replace with project specifics
+@import "starter";
+
+//responsive base
+@import "responsive";
