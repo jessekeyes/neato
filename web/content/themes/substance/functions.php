@@ -58,10 +58,6 @@ if ( ! function_exists( 'PREFIX_register_custom_taxonomies' ) )
 
 }; // end post types
 
-//****************** environment functions *************************//
-
-SCRIPT_DEBUG
-
 
 //****************** markup functions *************************//
 

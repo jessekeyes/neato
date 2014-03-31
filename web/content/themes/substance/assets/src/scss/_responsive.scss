@@ -1,12 +1,25 @@
-// single column for mobile defaults
+// mixins
+
+@mixin responsive-reset($chosen-breakpoint:$tablet) {
+	@include media($chosen-breakpoint) {
+		float: none !important; 
+		width: 100% !important;
+		clear: both;
+		margin: 0;
+	}
+}
+
+// single column for mobile/tablet defaults
+
+.container {
+	&>section, &>aside {
+		@include responsive-reset;
+	}
+}
 
 .row { //required class
-	&>div {
-		@include media($mobile) {
-			width: 100% !important;
-			float: none !important; 
-			clear: both;
-			margin: 0;
-		}
+	// &>div, &>article, &>aside, &>section {
+		&>* {
+			@include responsive-reset;
 	}
 }

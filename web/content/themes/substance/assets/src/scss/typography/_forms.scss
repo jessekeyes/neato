@@ -1,0 +1,57 @@
+input[type="text"], input[type="password"], input[type="tel"],input[type="file"], input[type="email"], input[type="url"], textarea {
+
+}
+
+label {
+
+
+  .placeholder { //modernizr placeholder styles
+  	
+  }
+}
+
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border-radius: 0;
+	display: inline-block;
+	margin: 0 0 10px;
+	width: 100%;
+	//background: url('#{$root_path}#{$images_path}lc-dropdown-arrow.svg') no-repeat right 15px center $white;
+	padding: 7px 10px 5px;
+	// border: 1px solid $beige-dark;
+	// @include gotham-medium;
+	color: $black;
+  text-indent: 0.01px;
+  text-overflow: '';
+	.ui-datepicker & {
+		background-position: right 5px center;
+		padding: 3px;
+		margin: 0 2px;
+	}
+	.lt-ie10 & {
+		//background: $white;
+	}
+}
+
+select::-ms-expand{ //ie10,11 of appearance: none
+  display:none;
+}
+
+
+ul.checkboxes {
+	margin: 0;
+	li {
+		margin-bottom: 0;
+		list-style: none;
+		font-size: em(14);	
+		label {
+			padding-left: 5px;
+			@include gotham-medium;
+			text-transform: none;
+			font-size: em(14);
+			margin-bottom: 5px;
+		}
+	}
+}

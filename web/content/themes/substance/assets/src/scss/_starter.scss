@@ -1,24 +1,3 @@
-@import "bourbon/bourbon";
-@import "settings";
-@import "mixins";
-@import "neat/neat"; 
-
-//base and resets
-@import "base/all";
-
-@import "constants";
-
-//responsive base
-@import "responsive";
-
-//optional includes
-@import "typography/all";
-@import "wordpress";
-@import "icons";
-@import "sticky-footer";
-
-// start styles, testing etc.
-
 body>header, body>footer {
 	background: #ccc;
 	@include pad($gutter);

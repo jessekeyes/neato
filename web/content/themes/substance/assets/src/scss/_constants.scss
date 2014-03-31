@@ -6,5 +6,5 @@
 //framework constants and mixins
 
 .row, .clearfix {
-	@include row();
+	@include row;
 }

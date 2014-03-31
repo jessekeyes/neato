@@ -6,7 +6,7 @@ module.exports = function(grunt) {
     watch: {
       build: {
         files: ['<%= pkg.src %>/scss/**/*.scss', '<%= pkg.src %>/js/**/*.js'],
-        tasks: ['sass:build', 'uglify:build']
+        tasks: ['sass:build', 'uglify:build', 'cssmin:build']
       }
     },
     sass: {
