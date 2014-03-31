@@ -1,4 +1,4 @@
-# Read me for Ride Oregon Ride!
+# Read me for Neato!
 
 ## Using GruntJS
 
@@ -7,6 +7,7 @@ Grunt is used to process some of the SASS files used in the site, specifically t
 * GruntJS
 * NodeJS
 * SASS (Ruby Gem)
+* CSSMin
 
 Then all you need to do is run `sudo npm install` in the root of the project. Note: you may not have to run `sudo` but I've found if you have permission errors, run it as `sudo`. This will load up all the depencies needed and outlined in package.json.
 
