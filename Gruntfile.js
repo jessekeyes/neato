@@ -31,15 +31,26 @@ module.exports = function(grunt) {
         }
       }
     },
+    cssmin: {
+      build: {
+        options: {
+          banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
+        },
+        files: {
+          '<%= pkg.css %>/main.min.css': ['<%= pkg.css %>/**/*.css']
+        }
+      }
+    }
   }); 
 
   // Load the plugins
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
 
   // Default task(s).
   grunt.registerTask('default', ['watch:build']);
-  grunt.registerTask('build', ['sass:build', 'uglify:build']);
+  grunt.registerTask('build', ['sass:build', 'uglify:build', 'cssmin:build']);
 
 };
