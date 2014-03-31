@@ -8,6 +8,7 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js lt-ie10"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
@@ -18,22 +19,19 @@
 		<meta name="description" content="">
 		<meta name="author" content="">
 		
-		<meta name="viewport" content="width=device-width">
+	<meta name="viewport"  content="width=device-width, initial-scale=1">
 
-		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-144x144-precomposed.png">
+	<link rel="icon" type="image/x-icon" href="/favicon.png">
+	<!-- <link rel="icon" type="image/x-icon" href="/favicon.ico"> -->
 
-		<?php versioned_stylesheet($GLOBALS["TEMPLATE_RELATIVE_URL"]."assets/css/main.css") ?>
-	
-		
-		<!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
-		<?php versioned_javascript($GLOBALS["TEMPLATE_RELATIVE_URL"]."assets/js/lib/modernizr-2.6.2.min.js") ?>
 	
 		<!-- Wordpress Head Items -->
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
 		<?php wp_head(); ?>
 
-		
+
 	<script>
 		Modernizr.load({
 			test: Modernizr.input.placeholder,
