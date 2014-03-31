@@ -4,6 +4,63 @@
  * @subpackage HTML5_Boilerplate
  */
 
+
+
+if ( ! function_exists( 'PREFIX_setup' ) ) :
+
+  function PREFIX_setup() {
+
+    //thumb sizes
+
+    //custom post types & taxonomies
+    PREFIX_register_custom_post_types(); //load them all in one function
+    PREFIX_register_custom_taxonomies(); //load them all in one function
+
+  };
+
+endif; // PREFIX_setup
+
+add_action( 'after_setup_theme', 'PREFIX_setup' );
+
+
+
+// ALL custom post types declared here
+
+if ( ! function_exists( 'PREFIX_register_custom_post_types' ) )
+{
+  /**
+    * Register custom post types for Project
+    *
+    * @uses register_post_types
+  */
+  function PREFIX_register_custom_post_types()
+  {
+
+
+  }
+
+}; // end post types
+
+// ALL custom taxonomies declared here
+
+if ( ! function_exists( 'PREFIX_register_custom_taxonomies' ) )
+{
+  /**
+    * Register custom taxonomies for Project
+    *
+    * @uses register_taxonomy
+  */
+  function PREFIX_register_custom_taxonomies()
+  {
+
+
+  }
+
+}; // end post types
+
+
+//****************** markup functions *************************//
+
 // Custom HTML5 Comment Markup
 function mytheme_comment($comment, $args, $depth) {
    $GLOBALS['comment'] = $comment; ?>
@@ -34,15 +91,6 @@ function mytheme_comment($comment, $args, $depth) {
 
 automatic_feed_links();
 
-// Widgetized Sidebar HTML5 Markup
-if ( function_exists('register_sidebar') ) {
-	register_sidebar(array(
-		'before_widget' => '<section>',
-		'after_widget' => '</section>',
-		'before_title' => '<h2 class="widgettitle">',
-		'after_title' => '</h2>',
-	));
-}
 
 // Custom Functions for CSS/Javascript Versioning
 $GLOBALS["TEMPLATE_URL"] = get_bloginfo('template_url')."/";
@@ -71,7 +119,19 @@ function versioned_resource($relative_url){
 }
 
 
-// Register Scripts
+//****************** widgets *************************//
+
+// Widgetized Sidebar HTML5 Markup
+if ( function_exists('register_sidebar') ) {
+  register_sidebar(array(
+    'before_widget' => '<section>',
+    'after_widget' => '</section>',
+    'before_title' => '<h2 class="widgettitle">',
+    'after_title' => '</h2>',
+  ));
+}
+
+//****************** script reg/queue etc. *************************//
 function substance_scripts() {
 
   wp_register_script( 'App', get_stylesheet_directory_uri().'/assets/js/app.js', array( 'jquery' ), 1.0, true ); //keeps this one local to theme/child
@@ -80,10 +140,15 @@ function substance_scripts() {
   wp_register_script( 'Modernizr', get_template_directory_uri().'/assets/js/lib/modernizr-2.6.2.min.js', array( 'jquery' ), '2.6.2', false );
   wp_enqueue_script( 'Modernizr' );
 
-  wp_register_script( 'Placeholder Poly', get_template_directory_uri().'/assets/js/lib/placeholder_polyfill.jquery.min.combo.js', array( 'jquery' ), 2.07, false );
-  wp_enqueue_script( 'Placeholder Poly' );
-
 }
 
 // Hook into the 'wp_enqueue_scripts' action
 add_action( 'wp_enqueue_scripts', 'substance_scripts' );
+
+
+//****************** live functions *************************//
+
+// place functions needed in the template to generate on the fly like custom headlines, date formatting, etc.
+
+
+

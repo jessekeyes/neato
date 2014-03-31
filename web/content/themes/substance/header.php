@@ -22,12 +22,28 @@
 
 		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-		<?php versioned_stylesheet(get_stylesheet_directory_uri()."/assets/css/main.css") ?>
+		<?php versioned_stylesheet($GLOBALS["TEMPLATE_RELATIVE_URL"]."assets/css/main.css") ?>
+	
+		
+		<!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+		<?php versioned_javascript($GLOBALS["TEMPLATE_RELATIVE_URL"]."assets/js/lib/modernizr-2.6.2.min.js") ?>
 	
 		<!-- Wordpress Head Items -->
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
 		<?php wp_head(); ?>
+
+		
+	<script>
+		Modernizr.load({
+			test: Modernizr.input.placeholder,
+			nope:
+			[
+				'<?= "{$template_url}assets/css/placeholder_polyfill.min.css" ?>',
+				'<?= "{$template_url}assets/js/lib/placeholder_polyfill.jquery.min.combo.js" ?>'
+			]
+		});
+	</script>
 
 </head>
 <body <?php body_class(); ?>>
