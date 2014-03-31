@@ -15,7 +15,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: '<%= pkg.src %>/scss',
           src: ['*.scss'],
-          dest: '<%= pkg.css %>',
+          dest: '<%= pkg.src %>/css',
           ext: '.css'
         }]
       }
@@ -37,7 +37,7 @@ module.exports = function(grunt) {
           banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
         },
         files: {
-          '<%= pkg.css %>/main.min.css': ['<%= pkg.css %>/**/*.css']
+          '<%= pkg.css %>/main.min.css': ['<%= pkg.src %>/css/**/*.css']
         }
       }
     }
