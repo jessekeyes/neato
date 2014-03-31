@@ -5,16 +5,20 @@
 		height: auto !important; //overrides global default
 	}
 	body {
-		margin: 0 0 125px; //bottom = footer height
-	}
-	footer {
-		position: absolute;
-		left: 0;
-		bottom: 0;
-		height: 125px;
-		width: 100%;
+		margin: 0 0 $footerHeight; //bottom = footer height
+		&>footer {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			height: $footerHeight;
+			width: 100%;
+			@include media($small-tablet) {
+				position: static;
+				height: auto;
+			}
+		}
 		@include media($small-tablet) {
-			position: static;
+			margin-bottom: 0;
 		}
 	}
 }

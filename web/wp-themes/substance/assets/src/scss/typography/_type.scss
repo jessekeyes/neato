@@ -9,38 +9,46 @@
  */
 
 body {
-	font-family: $helvetica;
+	@include gotham-lite;
 	font-size: 100%;
 	color: $black;
 }
 
+h1,h2,h3,h4,h5,h6 {
+	.content & {
+		color: $heading;
+	}
+}
+
+$headingBase: 1em !default; //use as the content's h1 multiple of base (1em)
+
 h1 {
-	font-size: 2em;
+	font-size: 2*$headingBase;
 	margin: 0 0 0.67em;
 }
 
 h2 {
-	font-size: 1.5em;
+	font-size: 1.5*$headingBase;
 	margin: 0 0 0.83em;
 }
 
 h3 {
-	font-size: 1.17em;
-	margin: 0 0 01em;
+	font-size: 1.17*$headingBase;
+	margin: 0 0 1em;
 }
 
 h4 {
-	font-size: 1em;
+	font-size: $headingBase;
 	margin: 0 0 1.33em;
 }
 
 h5 {
-	font-size: 0.83em;
+	font-size: .83*$headingBase;
 	margin: 0 0 1.67em;
 }
 
 h6 {
-	font-size: 0.67em;
+	font-size: .67*$headingBase;
 	margin: 0 0 2.33em;
 }
 
@@ -59,6 +67,10 @@ abbr[title] {
 b,
 strong {
 	font-weight: bold;
+}
+
+em {
+	font-style: italic;
 }
 
 blockquote {
@@ -82,6 +94,9 @@ hr {
 	-moz-box-sizing: content-box;
 	box-sizing: content-box;
 	height: 0;
+	border: 0;
+	border-top: 1px solid $beige-dark;
+	margin: 0 0 1em;
 }
 
 /**
@@ -199,7 +214,9 @@ dl,
 menu,
 ol,
 ul {
-	margin: 0 0 1em;
+	.content & {
+		margin: 0 0 1em;
+	}
 }
 
 dd {
@@ -213,7 +230,9 @@ dd {
 menu,
 ol,
 ul {
-	padding: 0 0 0 40px;
+	.content & {
+		padding: 0 0 0 40px;
+	}
 }
 
 /**
@@ -238,6 +257,11 @@ nav ol {
 img {
 	border: 0; /* 1 */
 	-ms-interpolation-mode: bicubic; /* 2 */
+	max-width: 100%;
+	display: block;
+	.gmnoprint & { //gmaps fix for wonky images in gmaps
+		max-width: none;
+	}
 }
 
 /**
@@ -349,10 +373,10 @@ button,
 html input[type="button"], /* 1 */
 input[type="reset"],
 input[type="submit"], .button {
-	-webkit-appearance: button; /* 2 */
+	// -webkit-appearance: button; /* 2 */
 	cursor: pointer; /* 3 */
 	*overflow: visible;  /* 4 */
-	@include button; // bourbon mixin
+	//@include button($orange,$orange-dark); // bourbon mixin
 }
 
 /**

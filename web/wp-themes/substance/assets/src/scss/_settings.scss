@@ -12,6 +12,10 @@ $grid-columns: 12;
 $max-width: em(1200);
 
 
+
+$footerHeight: 100px;
+
+
 // breakpoints
 $tablet: new-breakpoint(max-width 768px 8);
 $small-tablet: new-breakpoint(max-width 767px 8);
@@ -21,7 +25,14 @@ $mobile: new-breakpoint(max-width 480px 4);
 $black: rgba(0,0,0,0.8);
 $link:	darkRed;
 
-//fonts
+//type adjustments
+$headingBase: .69em;
+
+//fonts, uses webfonts mixin. list each one on a separate line
 $web-font-names:            "icomoon";
 $web-font-files:            "icomoon";
 
+
+
+
+@import "mixins"; // for some reasons to override bourbon mixins this needs to be ported here.

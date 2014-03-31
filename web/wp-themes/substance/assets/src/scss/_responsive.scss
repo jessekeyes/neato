@@ -1,7 +1,7 @@
 // mixins
 
-%responsive-reset {
-	@include media($tablet) {
+@mixin responsive-reset($chosen-breakpoint:$tablet) {
+	@include media($chosen-breakpoint) {
 		float: none !important; 
 		width: 100% !important;
 		clear: both;
@@ -13,12 +13,13 @@
 
 .container {
 	&>section, &>aside {
-		@extend %responsive-reset;
+		@include responsive-reset;
 	}
 }
 
 .row { //required class
-	&>div {
-			@extend %responsive-reset;
+	// &>div, &>article, &>aside, &>section {
+		&>* {
+			@include responsive-reset;
 	}
 }
