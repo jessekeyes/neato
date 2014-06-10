@@ -22,7 +22,7 @@
 body>header, body>footer {
 	background: #ccc;
 	@include pad($gutter);
-}
+} 
 
 .container {
 	@include outer-container;

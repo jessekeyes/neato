@@ -15,9 +15,9 @@ section {
 	}
 	&#the-grid { 
 		@include outer-container;
-		border: #333 solid 2px;
+		border: #333 solid 2px; 
 		div {
-			border: #ccc solid 2px;
+			border: #ccc solid 2px; 
 			&.double {
 				@include span-columns(6);
 			}
@@ -31,7 +31,7 @@ section {
 					@include omega(3n);
 				}
 			}
-		}
+		} 
 	}
 }
 
