@@ -1,7 +1,7 @@
 @import "bourbon/bourbon";
+@import "neat/neat";
 @import "settings";
 @import "mixins";
-@import "neat/neat"; 
 
 //base and resets
 @import "base/all";
@@ -14,8 +14,11 @@
 //optional includes
 @import "typography/all";
 @import "wordpress";
-@import "icons";
 @import "sticky-footer";
+
+//neat/bourbon overrides
+@import "overrides";
+@import "icons";
 
 // start styles, testing etc.
 

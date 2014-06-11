@@ -8,3 +8,13 @@
 .row, .clearfix {
 	@include row;
 }
+
+.container {
+	@include outer-container;
+	@include media(max-width $max-width+$gutter) {
+		padding: 0 $gutter/2;
+		.content & {
+			padding: 0; //override for if already in content container
+		}
+	}
+}

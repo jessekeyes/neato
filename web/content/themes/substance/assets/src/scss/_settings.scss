@@ -1,9 +1,9 @@
 @import "neat/neat-helpers";
 
 // file paths
-$root_path:                 "../../"; // path to HTML document root (relative from CSS)
-$images_path:               "assets/img/"; // path to images (relative from $root_path)
-$fonts_path:                "assets/fonts/"; // path to fonts (relative from $root_path)
+$root_path:                 "/content/themes/substance/assets/"; // path to HTML document root (relative from CSS)
+$images_path:               "img/"; // path to images (relative from $root_path)
+$fonts_path:                "fonts/"; // path to fonts (relative from $root_path)
 
 // Change the grid settings
 $column: 90px;
