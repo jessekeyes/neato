@@ -55,8 +55,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
   // Default task(s).
-  grunt.registerTask('default', ['watch:build']);
-  grunt.registerTask('build', ['sass:build', 'uglify:build', 'cssmin:build']);
+  grunt.registerTask('default', ['sass:build', 'uglify:build', 'sass:prod']);
   grunt.registerTask('scripts', ['watch:scripts']);
   grunt.registerTask('styles', ['watch:styles']);
 
