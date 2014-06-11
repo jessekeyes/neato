@@ -21,9 +21,7 @@
 		
 	<meta name="viewport"  content="width=device-width, initial-scale=1">
 
-	<link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-144x144-precomposed.png">
-	<link rel="icon" type="image/x-icon" href="/favicon.png">
-	<!-- <link rel="icon" type="image/x-icon" href="/favicon.ico"> -->
+	<? // favicon/touch icons are most reliable when put at web root ?>
 
 	
 		<!-- Wordpress Head Items -->

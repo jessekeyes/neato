@@ -156,30 +156,17 @@ function substance_scripts() {
 add_action( 'wp_enqueue_scripts', 'substance_scripts' );
 
 
+//****************** Filters *************************//
+// all scripts that filter or add filtrs to WP content before display
+
+
+
+
 //****************** live functions *************************//
 
 // place functions needed in the template to generate on the fly like custom headlines, date formatting, etc.
 
-if ( ! function_exists( 'PREFIX_get_posts_page' ) ) :
 
-function PRFIX_get_posts_page($info) {
-  if( get_option('show_on_front') == 'page') {
-    $posts_page_id = get_option( 'page_for_posts');
-    $posts_page = get_page( $posts_page_id);
-    $posts_page_title = $posts_page->post_title;
-    $posts_page_url = get_page_uri($posts_page_id  );
-  }
-  else $posts_page_title = $posts_page_url = '';
-
-  if ($info == 'url') {
-    return $posts_page_url;
-  } elseif ($info == 'title') {
-    return $posts_page_title;
-  } else {
-    return false;
-  }
-}
-endif;
 
 
 
