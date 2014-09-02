@@ -15,12 +15,13 @@
 
 		<title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
 		
-		<meta name="description" content="">
-		<meta name="author" content="">
+		<meta name="description" content="<?php bloginfo('description'); ?>">
+		<meta name="author" content="<?php bloginfo('name'); ?>">
 		
 	<meta name="viewport"  content="width=device-width, initial-scale=1">
+	<link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-144x144-precomposed.png">
 
-	<? // favicon/touch icons are most reliable when put at web root ?>
+	<? // favicon/icons are most reliable when put at web root ?>
 
 	
 		<!-- Wordpress Head Items -->
@@ -42,8 +43,8 @@
 
 </head>
 <body <?php body_class(); ?>>
-	<!--[if lt IE 7]>
-		<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+	<!--[if lte IE 7]>
+	<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> to better experience this site.</p>
 	<![endif]-->
 
 	<header role="banner">

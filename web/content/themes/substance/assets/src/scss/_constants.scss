@@ -11,7 +11,7 @@
 
 .container {
 	@include outer-container;
-	@include media(max-width $max-width+$gutter) {
+	@include media(max-width $max-width+30) {
 		padding: 0 $gutter/2;
 		.content & {
 			padding: 0; //override for if already in content container
