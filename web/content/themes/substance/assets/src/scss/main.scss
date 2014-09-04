@@ -1,5 +1,5 @@
-@import "bourbon/bourbon";
-@import "neat/neat";
+@import "../../vendor/scss/bourbon/bourbon";
+@import "../../vendor/scss/neat/neat";
 @import "settings";
 @import "mixins";
 
@@ -27,7 +27,7 @@ body>header, body>footer {
 	@include pad($gutter);
 } 
 
-.container {
+.container { 
 	@include outer-container;
 	@include pad($gutter);
 }

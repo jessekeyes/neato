@@ -13,7 +13,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
+		<title><?php wp_title('&laquo;', true, 'right'); ?></title>
 		
 		<meta name="description" content="<?php bloginfo('description'); ?>">
 		<meta name="author" content="<?php bloginfo('name'); ?>">
@@ -31,14 +31,14 @@
 
 
 	<script>
-		Modernizr.load({
-			test: Modernizr.input.placeholder,
-			nope:
-			[
-				'<?= "{$template_url}assets/css/placeholder_polyfill.min.css" ?>',
-				'<?= "{$template_url}assets/js/lib/placeholder_polyfill.jquery.min.combo.js" ?>'
-			]
-		});
+		// Modernizr.load({
+		// 	test: Modernizr.input.placeholder,
+		// 	nope:
+		// 	[
+		// 		'<?= "{$template_url}assets/css/placeholder_polyfill.min.css" ?>',
+		// 		'<?= "{$template_url}assets/js/lib/placeholder_polyfill.jquery.min.combo.js" ?>'
+		// 	]
+		// });
 	</script>
 
 </head>
