@@ -24,11 +24,11 @@ module.exports = function(grunt) {
     },
     watch: {
       build: {
-        files: ['<%= dirs.sass %>/**/*.scss', '<%= dirs.vendor %>/js/*', '<%= dirs.src %>/js/*'],
+        files: ['<%= dirs.sass %>/**/*.scss', '<%= dirs.vendor %>/js/*', '<%= dirs.src %>/js/**/*.js'],
         tasks: ['sass:build', 'uglify:build', 'sass:prod']
       },
       scripts: {
-        files: ['<%= dirs.vendor %>/js/*', '<%= dirs.src %>/js/*'],
+        files: ['<%= dirs.vendor %>/js/*', '<%= dirs.src %>/js/**/*.js'],
         tasks: ['uglify:build']
       },
       styles: {
