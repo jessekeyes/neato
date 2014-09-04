@@ -29,18 +29,6 @@
 
 		<?php wp_head(); ?>
 
-
-	<script>
-		// Modernizr.load({
-		// 	test: Modernizr.input.placeholder,
-		// 	nope:
-		// 	[
-		// 		'<?= "{$template_url}assets/css/placeholder_polyfill.min.css" ?>',
-		// 		'<?= "{$template_url}assets/js/lib/placeholder_polyfill.jquery.min.combo.js" ?>'
-		// 	]
-		// });
-	</script>
-
 </head>
 <body <?php body_class(); ?>>
 	<!--[if lte IE 7]>
