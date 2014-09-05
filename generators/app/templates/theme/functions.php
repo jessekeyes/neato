@@ -1,39 +1,39 @@
 <?php
 /**
  * @package WordPress
- * @subpackage HTML5_Boilerplate
+ * @subpackage <%= themeName %>
  */
 
 
 
-if ( ! function_exists( 'PREFIX_setup' ) ) :
+if ( ! function_exists( '<%= themeNameSpace %>_setup' ) ) :
 
-  function PREFIX_setup() {
+  function <%= themeNameSpace %>_setup() {
 
     //thumb sizes
 
     //custom post types & taxonomies
-    PREFIX_register_custom_post_types(); //load them all in one function
-    PREFIX_register_custom_taxonomies(); //load them all in one function
+    <%= themeNameSpace %>_register_custom_post_types(); //load them all in one function
+    <%= themeNameSpace %>_register_custom_taxonomies(); //load them all in one function
 
   };
 
-endif; // PREFIX_setup
+endif; // <%= themeNameSpace %>_setup
 
-add_action( 'after_setup_theme', 'PREFIX_setup' );
+add_action( 'after_setup_theme', '<%= themeNameSpace %>_setup' );
 
 
 
 // ALL custom post types declared here
 
-if ( ! function_exists( 'PREFIX_register_custom_post_types' ) )
+if ( ! function_exists( '<%= themeNameSpace %>_register_custom_post_types' ) )
 {
   /**
     * Register custom post types for Project
     *
     * @uses register_post_types
   */
-  function PREFIX_register_custom_post_types()
+  function <%= themeNameSpace %>_register_custom_post_types()
   {
 
 
@@ -43,14 +43,14 @@ if ( ! function_exists( 'PREFIX_register_custom_post_types' ) )
 
 // ALL custom taxonomies declared here
 
-if ( ! function_exists( 'PREFIX_register_custom_taxonomies' ) )
+if ( ! function_exists( '<%= themeNameSpace %>_register_custom_taxonomies' ) )
 {
   /**
     * Register custom taxonomies for Project
     *
     * @uses register_taxonomy
   */
-  function PREFIX_register_custom_taxonomies()
+  function <%= themeNameSpace %>_register_custom_taxonomies()
   {
 
 
@@ -143,9 +143,9 @@ function substance_scripts() {
     // wp_enqueue_script( 'Modernizr' );
 
     if( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) {
-      wp_enqueue_style( 'PREFIX', get_template_directory_uri() . "/assets/src/css/main.css", array(), NULL );
+      wp_enqueue_style( '<%= themeNameSpace %>', get_template_directory_uri() . "/assets/src/css/main.css", array(), NULL );
     } else {
-      wp_enqueue_style( 'PREFIX', get_template_directory_uri() . "/assets/css/main.min.css", array(), NULL );
+      wp_enqueue_style( '<%= themeNameSpace %>', get_template_directory_uri() . "/assets/css/main.min.css", array(), NULL );
     }
 
   }
