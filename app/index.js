@@ -7,12 +7,12 @@ var chalk = require('chalk');
 var WpGruntedThemeGenerator = module.exports = function WpGruntedThemeGenerator(args, options, config) {
   yeoman.generators.Base.apply(this, arguments);
 
-  this.on('end', function () {
-  	if (this.themeNameSpace) {
-	  	process.chdir(this.themeNameSpace+"/grunt/");
-	    this.installDependencies({ skipInstall: options['skip-install'], bower: false });
-  	}
-  });
+  // this.on('end', function () {
+  // 	if (this.themeNameSpace) {
+	 //  	process.chdir(this.themeNameSpace+"/grunt/");
+	 //    this.installDependencies({ skipInstall: options['skip-install'], bower: false });
+  // 	}
+  // });
 
   this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
 };
