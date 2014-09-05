@@ -1,19 +1,36 @@
 {
   "name": "generator-neato",
-  "version": "0.1.0",
-  "description": "WP starter theme based on bourbon, neat, and custom set up",
-  "keywords": ["yeoman-generator", "neato"],
-  "dependencies": {
-    "yeoman-generator": "^0.16.0"
-  }
+  "version": "0.0.1",
+  "description": "A WordPress theme YeoMan generator, to kickstart WordPress theme development with yo, sass and grunt",
+  "keywords": [
+    "yeoman-generator", "neato"
+  ],
+  "homepage": "https://github.com/jessekeyes/neato",
+  "bugs": "https://github.com/jessekeyes/neato/issues",
+  "author": {
+    "name": "Jesse Keyes",
+    "email": "",
+    "url": "http://www.jessekeyes.com"
+  },
   "main": "app/index.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/jessekeyes/neato.git"
   },
-  "author": "Jesse Keyes",
-  "license": "BSD-2-Clause",
-  "bugs": {
-    "url": "https://github.com/jessekeyes/neato/issues"
-  }
+  "dependencies": {
+    "yeoman-generator": "~0.14.0",
+    "chalk": "~0.4.0"
+  },
+  "peerDependencies": {
+    "yo": ">=1.0.0"
+  },
+  "engines": {
+    "node": ">=0.8.0",
+    "npm": ">=1.2.10"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ]
 }
