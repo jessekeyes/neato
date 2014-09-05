@@ -2,10 +2,11 @@
   "name": "generator-neato",
   "version": "0.1.0",
   "description": "WP starter theme based on bourbon, neat, and custom set up",
+  "keywords": ["yeoman-generator"],
+  "dependencies": {
+    "yeoman-generator": "^0.16.0"
+  }
   "main": "generators/app/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git://github.com/jessekeyes/neato.git"
