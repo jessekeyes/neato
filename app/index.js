@@ -87,6 +87,6 @@ WpGruntedThemeGenerator.prototype.app = function app() {
   // this.mkdir(this.themeNameSpace+'/fonts');
   // this.mkdir(this.themeNameSpace+'/grunt');
 
-  this.template('_Gruntfile.js', this.themeNameSpace+'/Gruntfile.js')
-  this.template('_package.json', this.themeNameSpace+'/package.json')
+  this.template('_Gruntfile.js', this.themeNameSpace+'Gruntfile.js')
+  this.template('_package.json', this.themeNameSpace+'package.json')
 };
