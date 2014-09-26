@@ -79,4 +79,5 @@ WpGruntedThemeGenerator.prototype.app = function app() {
 
   this.template('_Gruntfile.js', this.themeNameSpace+'/Gruntfile.js')
   this.template('_package.json', this.themeNameSpace+'/package.json')
+  this.template('_gitignore', this.themeNameSpace+'/.gitignore')
 };
