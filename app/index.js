@@ -7,13 +7,6 @@ var chalk = require('chalk');
 var WpGruntedThemeGenerator = module.exports = function WpGruntedThemeGenerator(args, options, config) {
   yeoman.generators.Base.apply(this, arguments);
 
-  // this.on('end', function () {
-  // 	if (this.themeNameSpace) {
-	 //  	process.chdir(this.themeNameSpace+"/grunt/");
-	 //    this.installDependencies({ skipInstall: options['skip-install'], bower: false });
-  // 	}
-  // });
-
   this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
 };
 
@@ -83,10 +76,7 @@ WpGruntedThemeGenerator.prototype.app = function app() {
   this.themeCreated = currentDate.getFullYear() + '-' + (currentDate.getMonth() + 1) + '-' + currentDate.getDate();
 
   this.directory('theme', this.themeNameSpace);
-  // this.mkdir(this.themeNameSpace+'/dist');
-  // this.mkdir(this.themeNameSpace+'/fonts');
-  // this.mkdir(this.themeNameSpace+'/grunt');
 
-  this.template('_Gruntfile.js', this.themeNameSpace+'Gruntfile.js')
-  this.template('_package.json', this.themeNameSpace+'package.json')
+  this.template('_Gruntfile.js', this.themeNameSpace+'/Gruntfile.js')
+  this.template('_package.json', this.themeNameSpace+'/package.json')
 };
