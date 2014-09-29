@@ -43,7 +43,7 @@ WpGruntedThemeGenerator.prototype.askFor = function askFor() {
     name: 'themeURI',
     message: 'Website of the themes?',
     default: function( answers ) {
-      return 'http://www.'+answers.themeName+'.com';
+      return 'http://www.'+nswers.themeName.replace(/\W/g, '-').toLowerCase()+'.com';
     }
   },{
     name: 'themeDescription',
