@@ -25,26 +25,32 @@ WpGruntedThemeGenerator.prototype.askFor = function askFor() {
     name: 'themeNameSpace',
     message: 'Unique name-space for the theme (alphanumeric)?',
     default: function( answers ) {
-		return answers.themeName.replace(/\W/g, '').toLowerCase();
-	}
+  		return answers.themeName.replace(/\W/g, '').toLowerCase();
+  	}
   },{
     name: 'themeAuthor',
     message: 'Name of the themes author?',
     default: function( answers ) {
-		return 'Substance, Inc.';
-	}
+  		return 'Substance, Inc.';
+  	}
   },{
     name: 'themeAuthorURI',
     message: 'Website of the themes authors?',
     default: function( answers ) {
-		return 'http://www.findsubstance.com';
-	}
+  		return 'http://www.findsubstance.com';
+  	}
+  },{
+    name: 'themeURI',
+    message: 'Website of the themes?',
+    default: function( answers ) {
+      return 'http://www.'+answers.themeName+'.com';
+    }
   },{
     name: 'themeDescription',
     message: 'Description of the theme?',
     default: function( answers ) {
-		return 'This is a description for the '+answers.themeName+' theme.';
-	}
+  		return 'This is a description for the '+answers.themeName+' theme.';
+  	}
   }];
 
   this.prompt(prompts, function (props) {
@@ -53,7 +59,6 @@ WpGruntedThemeGenerator.prototype.askFor = function askFor() {
     this.themeAuthor = props.themeAuthor;
     this.themeAuthorURI = props.themeAuthorURI;
     this.themeURI = props.themeURI;
-    this.themeTags = props.themeTags;
     this.themeDescription = props.themeDescription;
     this.jshintTag = '<%= jshint.all %>';
 
