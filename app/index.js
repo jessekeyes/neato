@@ -15,7 +15,7 @@ util.inherits(WpGruntedThemeGenerator, yeoman.generators.Base);
 WpGruntedThemeGenerator.prototype.askFor = function askFor() {
   var cb = this.async();
 
-  console.log("\n\n"+chalk.cyan.bold("SHALL WE PLAY A GAME?\n\n")+chalk.cyan.bold("Love to.  How about Global Thermonuclear War?\n\n")+chalk.cyan.bold("WOULDN'T YOU PREFER TO INSTALL A WORDPRESS THEME?\n\n")+chalk.cyan.bold("Later.  Let's play Global Thermonuclear War.\n\n")+chalk.cyan.bold("FINE.\n\n\n\n")
+  console.log("\n\n"+chalk.cyan.bold("SHALL WE PLAY A GAME?\n\n")+chalk.cyan.bold("Love to.  How about Global Thermonuclear War?\n\n")+chalk.cyan.bold("WOULDN'T YOU PREFER TO INSTALL A WORDPRESS THEME?\n\n")+chalk.cyan.bold("Oh, OK.\n\n\n\n")
   );
 
   var prompts = [{
