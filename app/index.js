@@ -39,7 +39,6 @@ WpGruntedThemeGenerator.prototype.askFor = function askFor() {
     default: function( answers ) {
 		return 'http://www.findsubstance.com';
 	}
-  }
   },{
     name: 'themeDescription',
     message: 'Description of the theme?',
