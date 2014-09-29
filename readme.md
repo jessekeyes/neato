@@ -15,7 +15,7 @@ Use this generator to quickly create a starter WP theme for your project. The th
 2. Navigate to your main themes dir (usually: wp-content/themes/)
 3. Install the Neato yeoman generator: `npm install -g yo https://github.com/jessekeyes/neato/tarball/master`
 
-(if you've done this before, you can skip this step, but as thing if there are updates to the generator, you should install it again)
+(if you've done this before, you can skip this step, but if there were updates to the generator, you should install it again)
 
 4. Run the generator: `yo neato`
 5. Follow the prompts

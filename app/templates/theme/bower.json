@@ -1,5 +1,5 @@
 {
-  "name": "Project Name",
+  "name": "<%= themeName %>",
   "version": "0.1.0",
   "dependencies": {
     "bourbon": "^4.0.1",

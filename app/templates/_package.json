@@ -1,8 +1,8 @@
 {
-  "name": "neato-framework",
+  "name": "<%= themeName %>",
   "version": "0.1.0",
-  "description": "A simple front-end framework/boilerplate based on bourbon/neat and includes common js functions.",
-  "author": "Jesse Keyes <jessekeyes@zoho.com>",
+  "description": "<%= themeDescription %>",
+  "author": "<%= themeAuthor %> <%= themeAuthorURI %>",
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-bower-task": "~0.4.0",
