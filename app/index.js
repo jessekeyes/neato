@@ -15,14 +15,15 @@ util.inherits(WpGruntedThemeGenerator, yeoman.generators.Base);
 WpGruntedThemeGenerator.prototype.askFor = function askFor() {
   var cb = this.async();
 
-  console.log("\n\n                           "+chalk.blue.bold("**")+"         \n"+"           "+chalk.blue.bold("****")+"    "+chalk.blue.bold("****")+"    "+chalk.blue.bold("****")+"       \n"+"  "+chalk.yellow("GGGGG")+"  "+chalk.yellow("RRRR")+""+chalk.blue.bold("*")+"  "+chalk.yellow("U")+"   "+chalk.blue.bold("*")+""+chalk.yellow("U")+"  "+chalk.yellow("N")+"   "+chalk.blue.bold("*")+""+chalk.yellow("N")+"  "+chalk.yellow("TTTTTT")+"\n"+""+chalk.yellow("GG")+"       "+chalk.yellow("R")+"   "+chalk.yellow("R")+""+chalk.blue.bold("*")+" "+chalk.yellow("U")+"   "+chalk.blue.bold("*")+""+chalk.yellow("U")+""+chalk.blue.bold("*")+" "+chalk.yellow("N")+" "+chalk.yellow("N")+" "+chalk.blue.bold("*")+""+chalk.yellow("N")+"    "+chalk.yellow("TT")+"  \n"+""+chalk.yellow("GG")+"  "+chalk.yellow("GGG")+"  "+chalk.yellow("RRR")+"  "+chalk.blue.bold("**")+""+chalk.yellow("U")+"  "+chalk.blue.bold("*")+" "+chalk.yellow("U")+""+chalk.blue.bold("**")+""+chalk.yellow("N")+"  "+chalk.yellow("N")+" "+chalk.yellow("N")+"    "+chalk.yellow("TT")+"  \n"+"  "+chalk.yellow("GGGGG")+"  "+chalk.yellow("R")+"   "+chalk.yellow("R")+" "+chalk.blue.bold("**")+" "+chalk.yellow("UU")+"   "+chalk.blue.bold("*")+""+chalk.yellow("N")+" "+chalk.blue.bold("*")+"  "+chalk.yellow("N")+"    "+chalk.yellow("TT")+"  \n"+"                "+chalk.blue.bold("**")+"      "+chalk.blue.bold("**")+"            \n\n "+chalk.yellow.bold("*")+""+chalk.blue.bold("START YOUR GRUNTED WORDPRESS THEME")+""+chalk.yellow.bold("*")+" \n\n");
+  console.log("\n\n"+chalk.blue.bold("SHALL WE PLAY A GAME?\n\n")+chalk.blue.bold("Love to.  How about Global Thermonuclear War?\n\n")+chalk.blue.bold("WOUDN'T YOU PREFER TO INSTALL A WORDPRESS THEME?\n\n")+chalk.blue.bold("Later.  Let's play Global Thermonuclear War.\n\n")+chalk.blue.bold("FINE.\n\n\n\n")
+  );
 
   var prompts = [{
     name: 'themeName',
     message: 'Name of the theme you want to create?'
   },{
     name: 'themeNameSpace',
-    message: 'Uniq name-space for the theme (alphanumeric)?',
+    message: 'Uniqur name-space for the theme (alphanumeric)?',
     default: function( answers ) {
 		return answers.themeName.replace(/\W/g, '').toLowerCase();
 	}
@@ -30,25 +31,15 @@ WpGruntedThemeGenerator.prototype.askFor = function askFor() {
     name: 'themeAuthor',
     message: 'Name of the themes author?',
     default: function( answers ) {
-		return 'John Doe';
+		return 'Substance, Inc.';
 	}
   },{
     name: 'themeAuthorURI',
     message: 'Website of the themes authors?',
     default: function( answers ) {
-		return 'http://www.'+answers.themeAuthor.replace(/\W/g, '').toLowerCase()+'.com';
+		return 'http://www.findsubstance.com';
 	}
-  },{
-    name: 'themeURI',
-    message: 'Website of the theme?',
-	default: function( answers ) {
-		return answers.themeAuthorURI+'/'+answers.themeNameSpace;
-	}
-  },{
-  	type: 'checkbox',
-    name: 'themeTags',
-    message: 'Theme tags ( more available on wordpress.org )?',
-    choices: ['dark','light','left-sidebar','right-sidebar','fixed-layout','fluid-layout','responsive-layout']
+  }
   },{
     name: 'themeDescription',
     message: 'Description of the theme?',
