@@ -10,11 +10,18 @@ if ( ! function_exists( '<%= themeNameSpace %>_setup' ) ) :
 
   function <%= themeNameSpace %>_setup() {
 
-    //thumb sizes
+    //post thumbs/featured images
+    add_post_type_support( 'attachment:audio', 'thumbnail' );
+    add_post_type_support( 'attachment:video', 'thumbnail' );
+     
+    add_theme_support( 'post-thumbnails' );
+
+    // html5 semantic markup
+    add_theme_support( 'html5' );
 
     //custom post types & taxonomies
-    <%= themeNameSpace %>_register_custom_post_types(); //load them all in one function
-    <%= themeNameSpace %>_register_custom_taxonomies(); //load them all in one function
+    <%= themeNameSpace %>_register_custom_post_types(); // ~*~ one function to rule them all ~*~
+    <%= themeNameSpace %>_register_custom_taxonomies(); // ~*~ one function to rule them all ~*~
 
   };
 
@@ -24,7 +31,22 @@ add_action( 'after_setup_theme', '<%= themeNameSpace %>_setup' );
 
 
 
-// ALL custom post types declared here
+// Widgetized Sidebar HTML5 Markup - default
+if ( ! function_exists( '<%= themeNameSpace %>_widgets_init' ) ) :
+  function <%= themeNameSpace %>_widgets_init() {
+    register_sidebar(array(
+      'before_widget' => '<section>',
+      'after_widget' => '</section>',
+      'before_title' => '<h2 class="widgettitle">',
+      'after_title' => '</h2>',
+    ));
+  }
+endif; // <%= themeNameSpace %>_widgets_init
+add_action( 'widgets_init', '<%= themeNameSpace %>_widgets_init' );
+
+
+
+//****************** All custom post types declared here. *************************//
 
 if ( ! function_exists( '<%= themeNameSpace %>_register_custom_post_types' ) )
 {
@@ -35,13 +57,18 @@ if ( ! function_exists( '<%= themeNameSpace %>_register_custom_post_types' ) )
   */
   function <%= themeNameSpace %>_register_custom_post_types()
   {
-
-
+    /* Example format
+      function <%= themeNameSpace %>_post_type_name() {
+        register_post_type( 'whatever', $args );
+      }
+      //then declare the function explicitly, since only this wrapper function is called in set up.
+      <%= themeNameSpace %>_post_type_name();
+    */
   }
 
 }; // end post types
 
-// ALL custom taxonomies declared here
+//****************** All custom taxonimies declared here *************************//
 
 if ( ! function_exists( '<%= themeNameSpace %>_register_custom_taxonomies' ) )
 {
@@ -53,86 +80,22 @@ if ( ! function_exists( '<%= themeNameSpace %>_register_custom_taxonomies' ) )
   function <%= themeNameSpace %>_register_custom_taxonomies()
   {
 
+    /* Example format
+      function <%= themeNameSpace %>_taxonomy_name() {
+        register_taxonomy( 'whatever', $args );
+      }
+      //then declare the function explicitly, since only this wrapper function is called in set up.
+      <%= themeNameSpace %>_taxonomy_name();
+    */
 
   }
 
 }; // end post types
 
 
-//****************** markup functions *************************//
-
-// Custom HTML5 Comment Markup
-function mytheme_comment($comment, $args, $depth) {
-   $GLOBALS['comment'] = $comment; ?>
-   <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-      <article id="comment-<?php comment_ID(); ?>">
-        <div class="comment-author vcard">
-          <?php echo get_avatar( $comment, 40 ); ?>
-          <?php printf( __( '%s <span class="says">says:</span>', 'boilerplate' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
-        </div><!-- .comment-author .vcard -->
-        <?php if ( $comment->comment_approved == '0' ) : ?>
-          <em><?php _e( 'Your comment is awaiting moderation.', 'boilerplate' ); ?></em>
-          <br />
-        <?php endif; ?>
-        <footer class="comment-meta commentmetadata"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
-          <?php
-            /* translators: 1: date, 2: time */
-            printf( __( '%1$s at %2$s', 'boilerplate' ), get_comment_date(),  get_comment_time() ); ?></a><?php edit_comment_link( __( '(Edit)', 'boilerplate' ), ' ' );
-          ?>
-        </footer><!-- .comment-meta .commentmetadata -->
-        <div class="comment-body"><?php comment_text(); ?></div>
-        <div class="reply">
-          <?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-        </div><!-- .reply -->
-      </article><!-- #comment-##  -->
-    <!-- </li> is added by wordpress automatically -->
-<?php
-}
-
-automatic_feed_links();
-
-
-// Custom Functions for CSS/Javascript Versioning
-$GLOBALS["TEMPLATE_URL"] = get_bloginfo('template_url')."/";
-$GLOBALS["TEMPLATE_RELATIVE_URL"] = wp_make_link_relative($GLOBALS["TEMPLATE_URL"]);
-
-// Add ?v=[last modified time] to style sheets
-function versioned_stylesheet($relative_url, $add_attributes=""){
-  echo '<link rel="stylesheet" href="'.versioned_resource($relative_url).'" '.$add_attributes.'>'."\n";
-}
-
-// Add ?v=[last modified time] to javascripts
-function versioned_javascript($relative_url, $add_attributes=""){
-  echo '<script src="'.versioned_resource($relative_url).'" '.$add_attributes.'></script>'."\n";
-}
-
-// Add ?v=[last modified time] to a file url
-function versioned_resource($relative_url){
-  $file = $_SERVER["DOCUMENT_ROOT"].$relative_url;
-  $file_version = "";
-
-  if(file_exists($file)) {
-    $file_version = "?v=".filemtime($file);
-  }
-
-  return $relative_url.$file_version;
-}
-
-
-//****************** widgets *************************//
-
-// Widgetized Sidebar HTML5 Markup
-if ( function_exists('register_sidebar') ) {
-  register_sidebar(array(
-    'before_widget' => '<section>',
-    'after_widget' => '</section>',
-    'before_title' => '<h2 class="widgettitle">',
-    'after_title' => '</h2>',
-  ));
-}
 
 //****************** script reg/queue etc. *************************//
-function substance_scripts() {
+function <%= themeNameSpace %>_scripts_styles() {
 
 
   if ( !is_admin() ) {
@@ -153,7 +116,7 @@ function substance_scripts() {
 }
 
 // Hook into the 'wp_enqueue_scripts' action
-add_action( 'wp_enqueue_scripts', 'substance_scripts' );
+add_action( 'wp_enqueue_scripts', '<%= themeNameSpace %>_scripts_styles' );
 
 
 //****************** Filters *************************//
