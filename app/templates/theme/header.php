@@ -23,11 +23,12 @@
 
 	<? // favicon/icons are most reliable when put at web root ?>
 
-	
-		<!-- Wordpress Head Items -->
-		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+	<!--[if lt IE 9]>
+		<script src="<?php bloginfo('template_url');?>/assets/js/vendor/html5shiv.min.js"></script>
+	<![endif]-->
 
-		<?php wp_head(); ?>
+	
+	<?php wp_head(); ?>
 
 </head>
 <body <?php body_class(); ?>>

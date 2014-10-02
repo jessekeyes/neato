@@ -34,7 +34,7 @@ Currently this theme is set up with SASS CSS preprocessor and Uglify to process 
 * `assets/src/scss` - All custom/project sass files should be used here.
 * `assets/src/css` - unminified generated CSS files here. _Do not edit any generated files here (usually main.css)_
 * `assets/src/js` - JS files needed for the project go and are edited here.
-* `assets/src/js` - any JS plugins that aren't managed by Bower should go here. They'll have to be referenced manually (via the WP enqueue function or other method).
+* `assets/src/js/vendor` - any JS plugins that aren't managed by Bower should go here. They'll have to be referenced manually (via the WP enqueue function or other method).
 
 Other directories of note:
 
