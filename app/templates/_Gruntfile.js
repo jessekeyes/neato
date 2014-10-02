@@ -51,7 +51,8 @@ module.exports = function(grunt) {
           style: 'compressed'
         },
         files: {
-          '<%%= dirs.css %>/main.min.css' : '<%%= dirs.css %>/main.css'
+          '<%%= dirs.css %>/main.min.css' : '<%%= dirs.css %>/main.css',
+          '<%%= dirs.css %>/admin.min.css' : '<%%= dirs.css %>/admin.css'
         }
       }
     },

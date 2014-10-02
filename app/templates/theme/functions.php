@@ -93,6 +93,37 @@ if ( ! function_exists( '<%= themeNameSpace %>_register_custom_taxonomies' ) )
 }; // end post types
 
 
+//****************** body classes *************************//
+
+if ( ! function_exists( '<%= themeNameSpace %>_body_class' ) ) :
+  /**
+   * Some extra classes for the body.
+   *
+   * @param $classes
+   *
+   *
+   * @return $classes
+   */
+
+  function clt_body_class( $classes ) {
+    global $post;
+    
+    $postType = ( get_query_var( 'post_type' ) ) ? get_query_var( 'post_type' ) : 1;
+    
+    if ( is_page() )
+      $classes[] = $post->post_type . '-' . $post->post_name;
+
+    
+    if ( is_page() && !is_home() && !is_front_page() )
+      $classes[] = 'single-page';
+
+    return $classes;
+  }
+endif; // <%= themeNameSpace %>_body_class
+
+add_filter( 'body_class', '<%= themeNameSpace %>_body_class' );
+
+
 //****************** remove extraneous *************************//
 
 remove_action( 'wp_head', 'rsd_link' );
@@ -128,7 +159,11 @@ function <%= themeNameSpace %>_scripts_styles() {
 };
 
 function <%= themeNameSpace %>_admin_scripts_styles() {
-
+  if( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) {
+    wp_enqueue_style( '<%= themeNameSpace %>-admin', get_template_directory_uri() . "/assets/src/css/admin.css", array(), NULL );
+  } else {
+    wp_enqueue_style( '<%= themeNameSpace %>-admin', get_template_directory_uri() . "/assets/css/admin.min.css", array(), NULL );
+  }
 };
 
 // Hook into the 'wp_enqueue_scripts' action
