@@ -1,0 +1,14 @@
+<Files "readme.md">
+  Order Allow,Deny
+  Deny from all
+</Files>
+
+<Files "Gruntfile.js">
+  Order Allow,Deny
+  Deny from all
+</Files>
+
+<FilesMatch "(bower|package)\.json$">
+  Order Allow,Deny
+  Deny from all
+</FilesMatch>
