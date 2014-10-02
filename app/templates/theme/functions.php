@@ -99,11 +99,6 @@ function <%= themeNameSpace %>_scripts_styles() {
 
 
   if ( !is_admin() ) {
-    wp_register_script( 'App', get_stylesheet_directory_uri().'/assets/js/app.js', array( 'jquery' ), 1.0, true );
-    wp_enqueue_script( 'App' );
-
-    // wp_register_script( 'Modernizr', get_template_directory_uri().'/assets/js/lib/modernizr-2.6.2.min.js', array( 'jquery' ), '2.6.2', false );
-    // wp_enqueue_script( 'Modernizr' );
 
     if( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) {
       wp_enqueue_style( '<%= themeNameSpace %>', get_template_directory_uri() . "/assets/src/css/main.css", array(), NULL );
@@ -111,12 +106,26 @@ function <%= themeNameSpace %>_scripts_styles() {
       wp_enqueue_style( '<%= themeNameSpace %>', get_template_directory_uri() . "/assets/css/main.min.css", array(), NULL );
     }
 
+    wp_register_script( 'App', get_stylesheet_directory_uri().'/assets/js/app.js', array( 'jquery' ), 1.0, true );
+    wp_enqueue_script( 'App' );
+
+    // Modernizr call, put in footer, but HTML5shiv is loaded conditionally in header.php for IE8
+    wp_register_script( 'Modernizr', get_template_directory_uri().'/assets/src/js/vendor/modernizr.js', array( 'jquery' ), '2.8.3', true );
+    wp_enqueue_script( 'Modernizr' );
+
   }
 
-}
+};
+
+function <%= themeNameSpace %>_admin_scripts_styles() {
+
+};
 
 // Hook into the 'wp_enqueue_scripts' action
 add_action( 'wp_enqueue_scripts', '<%= themeNameSpace %>_scripts_styles' );
+
+// Hook into the 'admin_enqueue_scripts' action
+add_action( 'admin_enqueue_scripts', '<%= themeNameSpace %>_admin_scripts_styles' );
 
 
 //****************** Filters *************************//
