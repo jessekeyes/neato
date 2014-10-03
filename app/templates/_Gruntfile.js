@@ -38,6 +38,9 @@ module.exports = function(grunt) {
     },
     sass: {
       build: {
+        options: {
+          sourcemap: 'auto'
+        },
         files: [{
           expand: true,
           cwd: '<%%= dirs.sass %>',
