@@ -42,7 +42,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: '<%%= dirs.sass %>',
           src: ['*.scss'],
-          dest: '<%%= dirs.css %>',
+          dest: '<%%= dirs.src %>/css',
           ext: '.css'
         }]
       },
@@ -51,8 +51,8 @@ module.exports = function(grunt) {
           style: 'compressed'
         },
         files: {
-          '<%%= dirs.css %>/main.min.css' : '<%%= dirs.css %>/main.css',
-          '<%%= dirs.css %>/admin.min.css' : '<%%= dirs.css %>/admin.css'
+          '<%%= dirs.css %>/main.min.css' : '<%%= dirs.src %>/css/main.css',
+          '<%%= dirs.css %>/admin.min.css' : '<%%= dirs.src %>/css/admin.css'
         }
       }
     },
