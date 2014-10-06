@@ -21,7 +21,7 @@
 	<meta name="viewport"  content="width=device-width, initial-scale=1">
 	<link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
 
-	<? // favicon/icons are most reliable when put at web root ?>
+	<? // favicon/icons are most reliable when put at web root, place the apple touch icon and favicon files in the web root ?>
 
 	<!--[if lt IE 9]>
 		<script src="<?php bloginfo('template_url');?>/assets/js/vendor/html5shiv.min.js"></script>
