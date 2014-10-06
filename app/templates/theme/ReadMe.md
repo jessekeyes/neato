@@ -51,3 +51,16 @@ The recommended way to use GruntJS for this project is to set up two "watch" ins
 Alternatively you can run commands to do the above without engaging watch: `grunt sass` and `grunt uglify` respectively.
 
 _Note: it's a good idea to turn off any watch tasks when merging branches as recompiling scripts and styles may cause conflicts in git_
+
+## favicons
+In your theme you'll find three files that you need to move to the web root of your system:
+
+* favicon.ico
+* favicon.png
+* apple-touch-icon-precomposed.png
+
+You can move these with this command:
+
+From your theme dir: `mv favicon.ico favicon.png apple-touch-icon-precomposed.png ../../../`
+
+*Note: these are default html5 boiler plate icons, please replace with your own!*
