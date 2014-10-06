@@ -77,7 +77,7 @@ WpGruntedThemeGenerator.prototype.app = function app() {
   this.template('_gitignore', this.themeNameSpace+'/.gitignore')
 
   //icons
-  this.template(this.themeNameSpace+'/favicon.ico', '../../../favicon.ico') // place them in web root, where wp-content dir
-  this.template(this.themeNameSpace+'/favicon.png', '../../../favicon.png') // place them in web root, where wp-content dir
-  this.template(this.themeNameSpace+'/apple-touch-icon-precomposed.png', '../../../apple-touch-icon-precomposed.png') // place them in web root, where wp-content dir
+  this.directory('favicon.ico', '../../../favicon.ico') // place them in web root, where wp-content dir
+  this.directory('favicon.png', '../../../favicon.png') // place them in web root, where wp-content dir
+  this.directory('apple-touch-icon-precomposed.png', '../../../apple-touch-icon-precomposed.png') // place them in web root, where wp-content dir
 };
