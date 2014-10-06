@@ -3,6 +3,7 @@ var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
+var mv = require('mv');
 
 var WpGruntedThemeGenerator = module.exports = function WpGruntedThemeGenerator(args, options, config) {
   yeoman.generators.Base.apply(this, arguments);
@@ -77,7 +78,7 @@ WpGruntedThemeGenerator.prototype.app = function app() {
   this.template('_gitignore', this.themeNameSpace+'/.gitignore')
 
   //icons
-  this.template('_favicon-ico', '../../favicon.ico') // place them in web root, where wp-content dir
-  this.template('_favicon-png', '../../favicon.png') // place them in web root, where wp-content dir
-  this.template('_apple-touch-icon-precomposed-png', '../../apple-touch-icon-precomposed.png') // place them in web root, where wp-content dir
+  mv(this.template+'favicon.ico', '../../favicon.ico') // place them in web root, where wp-content dir
+  mv(this.template+'favicon.png', '../../favicon.png') // place them in web root, where wp-content dir
+  mv(this.template+'apple-touch-icon-precomposed.png', '../../apple-touch-icon-precomposed.png') // place them in web root, where wp-content dir
 };
