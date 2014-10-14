@@ -25,19 +25,19 @@ module.exports = function(grunt) {
     watch: {
       build: {
         files: ['<%%= dirs.sass %>/**/*.scss', '<%%= dirs.vendor %>/js/*', '<%%= dirs.src %>/js/**/*.js'],
-        tasks: ['sass:build', 'uglify:build', 'sass:prod']
+        tasks: ['sass', 'autoprefixer', 'cssmin', 'uglify']
       },
       scripts: {
         files: ['<%%= dirs.vendor %>/js/*', '<%%= dirs.src %>/js/**/*.js'],
-        tasks: ['uglify:build']
+        tasks: ['uglify']
       },
       styles: {
         files: ['<%%= dirs.sass %>/**/*.scss'],
-        tasks: ['sass:build', 'sass:prod']
+        tasks: ['sass', 'autoprefixer', 'cssmin']
       },
     },
     sass: {
-      build: {
+      all: {
         options: {
           sourcemap: 'auto'
         },
@@ -48,15 +48,34 @@ module.exports = function(grunt) {
           dest: '<%%= dirs.src %>/css',
           ext: '.css'
         }]
+      }
+    },
+    autoprefixer: {
+      options: {
+        browsers: [ 'last 2 version', 'ie 8', 'ie 9', 'Android 2' ],
+        map: true
       },
-      prod: {
-        options: {
-          style: 'compressed'
-        },
-        files: {
-          '<%%= dirs.css %>/main.min.css' : '<%%= dirs.src %>/css/main.css',
-          '<%%= dirs.css %>/admin.min.css' : '<%%= dirs.src %>/css/admin.css'
-        }
+      all: {
+        src: '<%%= dirs.src %>/css/*.css'
+      } 
+    },
+    cssmin: {
+      options: {
+        noAdvanced: true,
+        keepLineBreaks: true,
+        banner: '/*! <%%= pkg.title %> - v<%%= pkg.version %> - <%%= grunt.template.today("yyyy-mm-dd") %>\n' +
+          ' * <%%= pkg.homepage %>\n' +
+          ' * Copyright (c) <%%= grunt.template.today("yyyy") %>;' +
+          ' */\n'
+      },
+      minify: {
+        expand: true,
+        
+        cwd: '<%%= dirs.src %>/css/',
+        src: ['main.css','admin.css'],
+        
+        dest: '<%%= dirs.css %>/',
+        ext: '.min.css'
       }
     },
     uglify: {
@@ -77,9 +96,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-autoprefixer');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
 
   // Default task(s).
-  grunt.registerTask('default', ['sass:build', 'uglify:build', 'sass:prod']);
+  grunt.registerTask('default', ['sass', 'autoprefixer', 'cssmin', 'uglify']);
   grunt.registerTask('scripts', ['watch:scripts']);
   grunt.registerTask('styles', ['watch:styles']);
 
