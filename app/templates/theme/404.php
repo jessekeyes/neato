@@ -1,5 +1,7 @@
 <?php
 /**
+ * Main 404 page, when all else fails...
+ *
  * @package WordPress
  * @subpackage <%= themeName %>
  */

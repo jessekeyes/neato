@@ -1,6 +1,6 @@
 <?php
 /**
- * front page, homepage template.
+ * front page, homepage template
  *
  * @package WordPress
  * @subpackage <%= themeName %>
