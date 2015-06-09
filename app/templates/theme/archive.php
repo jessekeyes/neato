@@ -8,31 +8,29 @@
 
 get_header(); ?>
 
-  <div id="primary" class="content-area">
-    <main id="main" class="site-main" role="main">
+  <main class="site-main" role="main">
 
-    <?php if ( have_posts() ) : ?>
+  <?php if ( have_posts() ) : ?>
 
-      <header class="page-header">
-        <?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
-      </header><!-- .page-header -->
+    <header class="page-header">
+      <?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
+    </header><!-- .page-header -->
 
-      <?php while ( have_posts() ) : the_post(); ?>
+    <?php while ( have_posts() ) : the_post(); ?>
 
-        <?php get_template_part( 'template-parts/content', 'excerpt' ); ?>
+      <?php get_template_part( 'template-parts/content', 'excerpt' ); ?>
 
-      <?php endwhile; ?>
+    <?php endwhile; ?>
 
-      <?php get_template_part( 'template-parts', 'nav'); ?>
+    <?php get_template_part( 'template-parts', 'nav'); ?>
 
-    <?php else : ?>
+  <?php else : ?>
 
-      <?php get_template_part( 'template-parts/content', 'none' ); ?>
+    <?php get_template_part( 'template-parts/content', 'none' ); ?>
 
-    <?php endif; ?>
+  <?php endif; ?>
 
-    </main><!-- #main -->
-  </div><!-- #primary -->
+  </main>
 
 <?php get_sidebar(); ?>
 

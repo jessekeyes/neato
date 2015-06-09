@@ -6,14 +6,11 @@
 
 get_header(); ?>
 
-  <section id="main" role="main">
+  <main class="site-main" role="main">
 
-    <details>
-      <summary><h1>Not found</h1></summary>
-      <p><span frown>:(</span></p>
-    </details>
+    <?php get_template_part( 'template-parts/content', 'none' ); ?> 
 
-  </section>
+  </main>
 
 <?php get_sidebar(); ?>
 

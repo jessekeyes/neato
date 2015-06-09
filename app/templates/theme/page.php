@@ -1,12 +1,14 @@
 <?php
 /**
+ * main page template
+ *
  * @package WordPress
  * @subpackage <%= themeName %>
  */
 
 get_header(); ?>
 
-<main role="main">
+<main class="site-main" role="main">
   <?php while ( have_posts() ) : the_post(); ?>
 
     <?php get_template_part( 'template-parts/content', 'page' ); ?> 

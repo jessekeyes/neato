@@ -1,29 +1,21 @@
 <?php
 /**
+ * front page, homepage template.
+ *
  * @package WordPress
  * @subpackage <%= themeName %>
  */
 
 get_header(); ?>
 
-<section id="main" role="main">
-  <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-  <article class="post" id="post-<?php the_ID(); ?>">
-    <header>
-      <h2><?php the_title(); ?></h2>
-    </header>
+<main class="site-main" role="main">
+  <?php while ( have_posts() ) : the_post(); ?>
+
+    <?php get_template_part( 'template-parts/content', 'page' ); ?> 
   
-    <?php the_content('<p class="serif">Read the rest of this page &raquo;</p>'); ?>
+  <?php endwhile; ?>
 
-    <?php wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
-  
-  </article>
-  <?php endwhile; endif; ?>
-  <?php edit_post_link('Edit this entry.', '<p>', '</p>'); ?>
-
-  <?php comments_template(); ?>
-
-</section>
+</main>
 
 <?php get_sidebar(); ?>
 
