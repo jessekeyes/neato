@@ -9,8 +9,8 @@
 
   <article class="not-found no-results">
 
-    <header class="post-header">
-      <h1 class="post-title"><?php esc_html_e( 'Nothing Found', '<%= themeName %>' ); ?></h1>
+    <header class="page-header">
+      <h1 class="page-title"><?php esc_html_e( 'Nothing Found', '<%= themeName %>' ); ?></h1>
     </header>
 
   	<div class="content">
