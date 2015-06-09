@@ -1,9 +1,7 @@
-// buttons, overrides bourbon:buton
-
 @import "flexbox";
 
-
-//hide it
-.hide {
-	display: none !important;
+@mixin opacity($rate) {
+	opacity: $rate;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$rate*100})";
 }
+

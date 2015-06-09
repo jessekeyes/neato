@@ -85,7 +85,7 @@ module.exports = function(grunt) {
           mangle: false
         },
         files: {
-          '<%%= dirs.js %>/app.js': ['<%%= dirs.vendor %>/js/*', '<%%= dirs.src %>/js/*']
+          '<%%= dirs.js %>/app.js': ['<%%= dirs.vendor %>/js/*', '<%%= dirs.src %>/js/**/*.js']
         }
       }
     }

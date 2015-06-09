@@ -105,7 +105,7 @@ if ( ! function_exists( '<%= themeNameSpace %>_body_class' ) ) :
    * @return $classes
    */
 
-  function clt_body_class( $classes ) {
+  function <%= themeNameSpace %>_body_class( $classes ) {
     global $post;
     
     $postType = ( get_query_var( 'post_type' ) ) ? get_query_var( 'post_type' ) : 1;
