@@ -1,5 +1,7 @@
 <?php
 /**
+ * header of the theme
+ *
  * @package WordPress
  * @subpackage <%= themeName %>
  */
@@ -10,25 +12,24 @@
 <!--[if IE 8]>         <html class="no-js lt-ie10 lt-ie9"> <![endif]-->
 <!--[if IE 9]>         <html class="no-js lt-ie10"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-	<head>
-		<meta charset="utf-8">
+<head>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
 
-		<title><?php wp_title('&laquo;', true, 'right'); ?></title>
-		
-		<meta name="description" content="<?php bloginfo('description'); ?>">
-		<meta name="author" content="<?php bloginfo('name'); ?>">
-		
-	<meta name="viewport"  content="width=device-width, initial-scale=1">
-	<link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
-
-	<? // favicon/icons are most reliable when put at web root, place the apple touch icon and favicon files in the web root ?>
-
-	<!--[if lt IE 9]>
-		<script src="<?php bloginfo('template_url');?>/assets/js/vendor/html5shiv.min.js"></script>
-	<![endif]-->
-
+	<title><?php wp_title('&laquo;', true, 'right'); ?></title>
 	
-	<?php wp_head(); ?>
+	<meta name="description" content="<?php bloginfo('description'); ?>">
+	<meta name="author" content="<?php bloginfo('name'); ?>">
+	
+	<meta name="viewport"  content="width=device-width, initial-scale=1">
+
+	<? // favicon/icons are most reliable when put at web root, but other systems need them so generate them using http://realfavicongenerator.net ?>
+
+<!--[if lt IE 9]>
+	<script src="<?php bloginfo('template_url');?>/assets/js/vendor/html5shiv.min.js"></script>
+<![endif]-->
+
+
+<?php wp_head(); ?>
 
 </head>
 <body <?php body_class(); ?>>

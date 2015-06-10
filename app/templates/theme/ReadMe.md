@@ -53,14 +53,4 @@ Alternatively you can run commands to do the above without engaging watch: `grun
 _Note: it's a good idea to turn off any watch tasks when merging branches as recompiling scripts and styles may cause conflicts in git_
 
 ## favicons
-In your theme you'll find three files that you need to move to the web root of your system:
-
-* favicon.ico
-* favicon.png
-* apple-touch-icon-precomposed.png
-
-You can move these with this command:
-
-From your theme dir: `mv favicon.ico favicon.png apple-touch-icon-precomposed.png ../../../`
-
-*Note: these are default html5 boiler plate icons, please replace with your own!*
+This theme doesn't come with any default favicons or touch icons. Generate them using [this generator](http://realfavicongenerator.net), and update the header.php code and place the files at the web root.
