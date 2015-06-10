@@ -37,6 +37,9 @@ add_action( 'after_setup_theme', '<%= themeNameSpace %>_setup' );
 if ( ! function_exists( '<%= themeNameSpace %>_widgets_init' ) ) :
   function <%= themeNameSpace %>_widgets_init() {
     register_sidebar(array(
+      'name'          => __( 'Sidebar', '<%= themeNameSpace %>' ),
+      'id'            => 'sidebar',
+      'description'   => 'default sidebar',
       'before_widget' => '<section>',
       'after_widget' => '</section>',
       'before_title' => '<h2 class="widgettitle">',

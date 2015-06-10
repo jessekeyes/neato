@@ -14,7 +14,7 @@
     </header>
 
   	<div class="content">
-	    <?php the_content( _e( 'Continue reading &raquo;', '<%= themeNameSpace %>' ) ); ?>
+	    <?php the_content( _e( 'Continue reading &raquo;', '<%= themeNameSpace %>_domain' ) ); ?>
 	  </div>
 
   </article>
