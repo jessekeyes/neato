@@ -17,7 +17,7 @@
 	<meta name="description" content="<?php bloginfo('description'); ?>">
 	<meta name="author" content="<?php bloginfo('name'); ?>">
 	<meta name="viewport"  content="width=device-width, initial-scale=1">
-
+	<title><?php wp_title(''); ?></title>
 	<? // favicon/icons are most reliable when put at web root, but other systems need them so generate them using http://realfavicongenerator.net ?>
 
 <!--[if lt IE 9]>

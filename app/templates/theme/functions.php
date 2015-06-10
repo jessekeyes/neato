@@ -1,5 +1,7 @@
 <?php
 /**
+ * Main functions.php file use for set up. Include other modules as necessary
+ *
  * @package WordPress
  * @subpackage <%= themeName %>
  */
@@ -43,85 +45,6 @@ if ( ! function_exists( '<%= themeNameSpace %>_widgets_init' ) ) :
   }
 endif; // <%= themeNameSpace %>_widgets_init
 add_action( 'widgets_init', '<%= themeNameSpace %>_widgets_init' );
-
-
-
-//****************** All custom post types declared here. *************************//
-
-if ( ! function_exists( '<%= themeNameSpace %>_register_custom_post_types' ) )
-{
-  /**
-    * Register custom post types for Project
-    *
-    * @uses register_post_types
-  */
-  function <%= themeNameSpace %>_register_custom_post_types()
-  {
-    /* Example format
-      function <%= themeNameSpace %>_post_type_name() {
-        register_post_type( 'whatever', $args );
-      }
-      //then declare the function explicitly, since only this wrapper function is called in set up.
-      <%= themeNameSpace %>_post_type_name();
-    */
-  }
-
-}; // end post types
-
-//****************** All custom taxonimies declared here *************************//
-
-if ( ! function_exists( '<%= themeNameSpace %>_register_custom_taxonomies' ) )
-{
-  /**
-    * Register custom taxonomies for Project
-    *
-    * @uses register_taxonomy
-  */
-  function <%= themeNameSpace %>_register_custom_taxonomies()
-  {
-
-    /* Example format
-      function <%= themeNameSpace %>_taxonomy_name() {
-        register_taxonomy( 'whatever', $args );
-      }
-      //then declare the function explicitly, since only this wrapper function is called in set up.
-      <%= themeNameSpace %>_taxonomy_name();
-    */
-
-  }
-
-}; // end post types
-
-
-//****************** body classes *************************//
-
-if ( ! function_exists( '<%= themeNameSpace %>_body_class' ) ) :
-  /**
-   * Some extra classes for the body.
-   *
-   * @param $classes
-   *
-   *
-   * @return $classes
-   */
-
-  function <%= themeNameSpace %>_body_class( $classes ) {
-    global $post;
-    
-    $postType = ( get_query_var( 'post_type' ) ) ? get_query_var( 'post_type' ) : 1;
-    
-    if ( is_page() )
-      $classes[] = $post->post_type . '-' . $post->post_name;
-
-    
-    if ( is_page() && !is_home() && !is_front_page() )
-      $classes[] = 'single-page';
-
-    return $classes;
-  }
-endif; // <%= themeNameSpace %>_body_class
-
-add_filter( 'body_class', '<%= themeNameSpace %>_body_class' );
 
 
 //****************** remove extraneous *************************//
@@ -173,19 +96,18 @@ add_action( 'wp_enqueue_scripts', '<%= themeNameSpace %>_scripts_styles' );
 add_action( 'admin_enqueue_scripts', '<%= themeNameSpace %>_admin_scripts_styles' );
 
 
-//****************** Filters *************************//
-// all scripts that filter or add filtrs to WP content before display
+//****************** Custom Post Types and Taxonomies *************************//
+// declare custom post types and taxonomies here
+require get_template_directory() . '/inc/custom-posts.php';
 
 
+//****************** Filters & hooks *************************//
+// all scripts that filter or add filters to WP content before display
+require get_template_directory() . '/inc/filters.php';
 
 
-//****************** live functions *************************//
+//****************** Template Tags *************************//
 
 // place functions needed in the template to generate on the fly like custom headlines, date formatting, etc.
-
-
-
-
-
-
+require get_template_directory() . '/inc/template-tags.php';
 
