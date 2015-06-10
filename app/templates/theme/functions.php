@@ -105,9 +105,16 @@ require get_template_directory() . '/inc/custom-posts.php';
 // all scripts that filter or add filters to WP content before display
 require get_template_directory() . '/inc/filters.php';
 
+//****************** Admin functions *************************//
+// all functions that effect the admin screen and interface
+require get_template_directory() . '/inc/admin.php';
 
-//****************** Template Tags *************************//
 
+//****************** View functions *************************//
 // place functions needed in the template to generate on the fly like custom headlines, date formatting, etc.
-require get_template_directory() . '/inc/template-tags.php';
+require get_template_directory() . '/inc/views.php';
+
+//****************** Utilty functions *************************//
+// place functions needed in the template to generate on the fly like custom headlines, date formatting, etc.
+require get_template_directory() . '/inc/utils.php';
 
