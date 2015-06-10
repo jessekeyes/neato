@@ -99,9 +99,13 @@ add_action( 'wp_enqueue_scripts', '<%= themeNameSpace %>_scripts_styles' );
 add_action( 'admin_enqueue_scripts', '<%= themeNameSpace %>_admin_scripts_styles' );
 
 
-//****************** Custom Post Types and Taxonomies *************************//
-// declare custom post types and taxonomies here
+//****************** Custom Post Types *************************//
+// declare custom post types 
 require get_template_directory() . '/inc/custom-posts.php';
+
+//****************** Custom Taxonomies *************************//
+// declare custom post types 
+require get_template_directory() . '/inc/custom-taxonomies.php';
 
 
 //****************** Filters & hooks *************************//
