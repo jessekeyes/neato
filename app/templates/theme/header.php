@@ -13,13 +13,9 @@
 <!--[if IE 9]>         <html class="no-js lt-ie10"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-
-	<title><?php wp_title('&laquo;', true, 'right'); ?></title>
-	
+	<meta charset="<?php bloginfo( 'charset' ); ?>">	
 	<meta name="description" content="<?php bloginfo('description'); ?>">
 	<meta name="author" content="<?php bloginfo('name'); ?>">
-	
 	<meta name="viewport"  content="width=device-width, initial-scale=1">
 
 	<? // favicon/icons are most reliable when put at web root, but other systems need them so generate them using http://realfavicongenerator.net ?>
@@ -36,8 +32,8 @@
 	<!--[if lte IE 7]>
 	<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> to better experience this site.</p>
 	<![endif]-->
-
-	<header role="banner">
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', '<%= themeName %>' ); ?></a>
+	<header class="site-header" role="banner">
 		<h1><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
 		<p class="description"><?php bloginfo('description'); ?></p>
 	</header>
