@@ -10,7 +10,7 @@
 
 </div> <!-- /.container -->
 
-<footer>
+<footer class="site-footer">
     <p>
       <?php bloginfo('name'); ?> is proudly powered by
       <a href="http://wordpress.org/">WordPress</a>.
