@@ -1,26 +1,28 @@
+// framework bourbon : neat / wp_normalize.scss
 @import "../../vendor/scss/bourbon/bourbon";
 @import "../../vendor/scss/neat/neat";
-@import "settings";
-@import "mixins";
+@import "../../vendor/scss/wp-normalize-scss";
 
-//base and resets
-@import "base/all";
+// framework setup and vars
+@import "settings/settings"
+@import "base/elements";
 
-@import "constants";
-
-//responsive base
+// responsive base
 @import "responsive";
 
-//optional includes
-@import "typography/all";
-@import "wordpress";
-@import "sticky-footer";
+// optional includes
+@import "options/wordpress";
+// @import "options/sticky-footer";
 
-//neat/bourbon overrides
-@import "overrides";
+// neat/bourbon overrides
+//@import "settings/overrides";
+
+// <%= themeName %> project-specific styles, include here.
+@import "styleguide";
 @import "icons";
 
-// start styles, testing etc.
+
+// *************** SCAFFOLD STYLES ****************** //
 
 body>header, body>footer {
 	background: #ccc;

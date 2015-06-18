@@ -1,0 +1,113 @@
+// headings
+
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+}
+
+p {
+	margin-bottom: 1.5em;
+}
+
+dfn,
+cite,
+em,
+i {
+	@include $italic;
+}
+
+b,
+strong {
+	@include $bold;
+}
+
+blockquote {
+	margin: 0 1.5em;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+pre {
+	background: gray
+	font-family: monospace;
+	@include font-size(0.9375);
+	line-height: 1;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+code, kbd, tt, var {
+	font-family: monospace;
+	@include font-size(0.9375);
+}
+
+abbr, acronym {
+	border-bottom: 1px dotted $black;
+	cursor: help;
+}
+
+mark, ins {
+	background: $black;
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}
+
+// lists (in content)
+
+ul, ol {
+	margin: 0 0 1.5em 3em;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+dt {
+	@include bold;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+// nav lists reset
+nav {
+	&>ol, &>ul {
+		margin: 0;
+		padding: 0;
+	}
+}
+
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+
+hr {
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+	height: 0;
+	border: 0;
+	border-top: 1px solid $black;
+	margin: 0 0 1em;
+}

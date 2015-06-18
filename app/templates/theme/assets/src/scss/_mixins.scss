@@ -1,7 +1,0 @@
-@import "flexbox";
-
-@mixin opacity($rate) {
-	opacity: $rate;
-	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$rate*100})";
-}
-

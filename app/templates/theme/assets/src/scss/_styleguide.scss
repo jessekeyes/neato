@@ -1,0 +1,28 @@
+// style guide, for element styles in the main content div; user-created content. Reset and based on elements/_typography, override here.
+
+.content {	
+	h1 {
+		font-size: 200%;
+		margin: 0 0 0.67em;
+	}
+	h2 {
+		font-size: 150%;
+		margin: 0 0 0.83em;
+	}
+	h3 {
+		font-size: 117%;
+		margin: 0 0 1em;
+	}
+	h4 {
+		font-size: 100%
+		margin: 0 0 1.33em;
+	}
+	h5 {
+		font-size: 83%;
+		margin: 0 0 1.67em;
+	}
+	h6 {
+		font-size: 67%;
+		margin: 0 0 2.33em;
+	}
+}

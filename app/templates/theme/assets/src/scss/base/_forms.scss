@@ -1,0 +1,58 @@
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+textarea {
+	color: $black;
+	border: 1px solid $black;
+	border-radius: 3px;
+
+	&:focus {
+		color: $black;
+	}
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="tel"] {
+	padding: 3px;
+}
+
+textarea {
+	padding-left: 3px;
+	width: 100%;
+}
+
+
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border-radius: 0;
+	display: inline-block;
+	margin: 0 0 10px;
+	width: 100%;
+	//background ?
+	padding: 7px 10px 5px;
+	// border ?
+	color: $black;
+  text-indent: 0.01px;
+  text-overflow: '';
+	.ui-datepicker & {
+		background-position: right 5px center;
+		padding: 3px;
+		margin: 0 2px;
+	}
+	.lt-ie10 & {
+		//background: $white;
+	}
+}
+
+select::-ms-expand{ //ie10,11 of appearance: none
+  display:none;
+}

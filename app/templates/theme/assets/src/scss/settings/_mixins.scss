@@ -1,0 +1,38 @@
+// Rem output with px fallback
+@mixin font-size($sizeValue: 1) {
+	font-size: ($sizeValue * $font-base) * 1px;
+	font-size: $sizeValue * 1rem;
+}
+
+// cross-browser opacity mixin
+@mixin opacity($rate) {
+	opacity: $rate;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$rate*100})";
+}
+
+// Center block
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// font mixins
+@mixin $italic {
+	font-style: italic; // default, can be replaced with true font
+}
+
+@mixin $bold {
+	font-weight: bold; // default, can be replaced with true font
+}
+
+// Responsove
+
+@mixin responsive-reset($chosen-breakpoint:$small-tablet) {
+	@include media($chosen-breakpoint) {
+		float: none !important; 
+		width: 100% !important;
+		clear: both;
+		margin: 0;
+	}
+}

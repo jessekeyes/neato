@@ -1,0 +1,50 @@
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+
+/**
+ * 1. Remove border when inside `a` element in IE 6/7/8/9 and Firefox 3.
+ * 2. Improve image quality when scaled in IE 7.
+ */
+
+img {
+	border: 0; /* 1 */
+	-ms-interpolation-mode: bicubic; /* 2 */
+	max-width: 100%;
+	display: block;
+	.gmnoprint & { //gmaps fix for wonky images in gmaps
+		max-width: none;
+	}
+}
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+
+svg:not(:root) {
+	overflow: hidden;
+}
+
+img,
+embed,
+iframe,
+object,
+table {
+	max-width: 100%; // keep it in the container
+}
+
+
+@import "typography";
+@import "forms";
+@import "webfonts";

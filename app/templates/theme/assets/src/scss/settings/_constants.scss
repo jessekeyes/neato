@@ -1,12 +1,10 @@
-@import "../../vendor/scss/bourbon/bourbon";
-@import "settings";
-@import "../../vendor/scss/neat/neat";
-
-
-//framework constants and mixins
+// framework constants
 
 .row, .clearfix {
 	@include row;
+		&>* { // responsive reset
+			@include responsive-reset;
+	}
 }
 
 .container {
@@ -16,5 +14,8 @@
 		.content & {
 			padding: 0; //override for if already in content container
 		}
+	}
+	&>section, &>aside { // responsive reset
+		@include responsive-reset;
 	}
 }
