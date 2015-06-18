@@ -24,6 +24,8 @@
 
 // *************** SCAFFOLD STYLES ****************** //
 
+/* Remove these when development begins */
+
 body>header, body>footer {
 	background: #ccc;
 	@include pad($gutter);

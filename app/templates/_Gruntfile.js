@@ -1,4 +1,9 @@
+'use strict';
+
 module.exports = function(grunt) {
+
+  // Load all grunt tasks
+  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   // Project configuration.
   grunt.initConfig({
@@ -25,15 +30,15 @@ module.exports = function(grunt) {
     watch: {
       build: {
         files: ['<%%= dirs.sass %>/**/*.scss', '<%%= dirs.vendor %>/js/*', '<%%= dirs.src %>/js/**/*.js'],
-        tasks: ['sass', 'autoprefixer', 'cssmin', 'uglify']
+        tasks: ['default']
       },
       scripts: {
         files: ['<%%= dirs.vendor %>/js/*', '<%%= dirs.src %>/js/**/*.js'],
-        tasks: ['uglify']
+        tasks: ['scripts']
       },
       styles: {
         files: ['<%%= dirs.sass %>/**/*.scss'],
-        tasks: ['sass', 'autoprefixer', 'cssmin']
+        tasks: ['styles']
       },
     },
     sass: {
@@ -50,10 +55,12 @@ module.exports = function(grunt) {
         }]
       }
     },
-    autoprefixer: {
+    postcss: {
       options: {
-        browsers: [ 'last 2 version', 'ie 8', 'ie 9', 'Android 2' ],
-        map: true
+        map: true,
+        processors: [
+          require('autoprefixer-core')({browsers: [ 'last 2 versions', 'ie >= 8', 'Android >= 4' ]}),
+        ]
       },
       all: {
         src: '<%%= dirs.src %>/css/*.css'
@@ -63,7 +70,7 @@ module.exports = function(grunt) {
       options: {
         noAdvanced: true,
         keepLineBreaks: true,
-        banner: '/*! <%%= pkg.title %> - v<%%= pkg.version %> - <%%= grunt.template.today("yyyy-mm-dd") %>\n' +
+        banner: '/*! <%%= pkg.title %> - v<%%= pkg.version %>\n' +
           ' * <%%= pkg.homepage %>\n' +
           ' * Copyright (c) <%%= grunt.template.today("yyyy") %>;' +
           ' */\n'
@@ -81,27 +88,25 @@ module.exports = function(grunt) {
     uglify: {
       build: {
         options: {
-          banner: '/*! <%%= pkg.name %> <%%= grunt.template.today("yyyy-mm-dd") %> */\n',
+          banner: '/*! <%%= pkg.title %> - v<%%= pkg.version %>\n' +
+            ' * <%%= pkg.homepage %>\n' +
+            ' * Copyright (c) <%%= grunt.template.today("yyyy") %>;' +
+            ' */\n'
           mangle: false
         },
         files: {
-          '<%%= dirs.js %>/app.js': ['<%%= dirs.vendor %>/js/*', '<%%= dirs.src %>/js/**/*.js']
+          '<%%= dirs.js %>/app.js': ['<%%= dirs.vendor %>/js/*', '<%%= dirs.src %>/js/**/*.js'], // main js
+          '<%%= dirs.js %>/admin.js':    [ '<%%= dirs.src %>/js/admin/**/*.js' ], // WP Admin js
+          '<%%= dirs.js %>/head.js':    [ '<%%= dirs.src %>/js/head/**/*.js' ] // scripts that need to be in the head
         }
       }
     }
   }); 
 
-  // Load the plugins
-  grunt.loadNpmTasks('grunt-bower-task');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-autoprefixer');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
-
   // Default task(s).
-  grunt.registerTask('default', ['sass', 'autoprefixer', 'cssmin', 'uglify']);
-  grunt.registerTask('scripts', ['watch:scripts']);
-  grunt.registerTask('styles', ['watch:styles']);
+  grunt.registerTask('default', ['styles', 'scripts']);
+  grunt.registerTask('install', ['bower']);
+  grunt.registerTask('styles', ['sass', 'postcss', 'cssmin']);
+  grunt.registerTask('scripts', ['uglify']);
 
 };

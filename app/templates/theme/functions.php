@@ -76,9 +76,9 @@ function <%= themeNameSpace %>_scripts_styles() {
     wp_register_script( 'App', get_stylesheet_directory_uri().'/assets/js/app.js', array( 'jquery' ), 1.0, true );
     wp_enqueue_script( 'App' );
 
-    // Modernizr call, put in footer, but HTML5shiv is loaded conditionally in header.php for IE8
-    wp_register_script( 'Modernizr', get_template_directory_uri().'/assets/src/js/vendor/modernizr.js', array( 'jquery' ), '2.8.3', true );
-    wp_enqueue_script( 'Modernizr' );
+    // scripts that need to be in the head, like modernizr.js
+    wp_register_script( 'headJS', get_template_directory_uri().'/assets/js/head.js', array( 'jquery' ), '1.0', false );
+    wp_enqueue_script( 'headJS' );
 
   }
 
@@ -90,6 +90,11 @@ function <%= themeNameSpace %>_admin_scripts_styles() {
   } else {
     wp_enqueue_style( '<%= themeNameSpace %>-admin', get_template_directory_uri() . "/assets/css/admin.min.css", array(), NULL );
   }
+
+  wp_register_script( 'Admin', get_stylesheet_directory_uri().'/assets/js/admin.js', array( 'jquery' ), 1.0, true );
+  wp_enqueue_script( 'Admin' );
+
+
 };
 
 // Hook into the 'wp_enqueue_scripts' action
