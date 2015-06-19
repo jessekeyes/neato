@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "dependencies": {
     "bourbon": "^4.2",
-    "neat": "^1.7"
+    "neat": "^1.7",
+    "wp-normalize.scss": "^1.0.0"
   },
   "ignore": [
     "node_modules",
@@ -16,6 +17,9 @@
     },
     "neat": {
       "scss": "app/assets/stylesheets"
+    },
+    "wp-normalize.scss": {
+      "scss": "_wp-normalize.scss"
     }
   }
 }

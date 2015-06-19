@@ -4,11 +4,8 @@
 @import "../../vendor/scss/wp-normalize-scss";
 
 // framework setup and vars
-@import "settings/settings"
+@import "settings/settings";
 @import "base/elements";
-
-// responsive base
-@import "responsive";
 
 // optional includes
 @import "options/wordpress";

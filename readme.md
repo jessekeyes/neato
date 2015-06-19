@@ -7,7 +7,7 @@ Use this generator to quickly create a starter WP theme for your project. The th
 * [NodeJS](http://www.nodejs.org/download/)
 * [Bower](http://bower.io/#install-bower) `npm install -g bower`
 * [Yeoman](http://yeoman.io/) `npm install -g yo`
-* Install the Neato yeoman generator: `npm install -g yo https://github.com/jessekeyes/neato/tarball/master`
+* Install the Neato yeoman generator: `npm install -g https://github.com/jessekeyes/neato/tarball/master`
 * [SASS](http://sass-lang.com/install) (Ruby Gem)
 
 ### Generating your theme

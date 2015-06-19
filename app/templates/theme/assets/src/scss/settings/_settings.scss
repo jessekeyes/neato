@@ -1,4 +1,4 @@
-@import "../../vendor/scss/neat/neat-helpers";
+@import "../../../vendor/scss/neat/_neat-helpers";
 
 // file paths
 $root_path:                 "/content/themes/<%= themeNameSpace %>/assets/"; // path to HTML document root (relative from CSS)
@@ -22,7 +22,7 @@ $mobile: new-breakpoint(max-width 480px 4);
 
 //colors
 $black: rgba(0,0,0,0.8);
-$white: rgba(255,255,255,100);
+$white: rgba(255,255,255,1);
 $link:	darkRed;
 
 // ************* Fonts and type ************* //

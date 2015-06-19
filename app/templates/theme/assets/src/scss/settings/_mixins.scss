@@ -18,11 +18,11 @@
 }
 
 // font mixins
-@mixin $italic {
+@mixin italic {
 	font-style: italic; // default, can be replaced with true font
 }
 
-@mixin $bold {
+@mixin bold {
 	font-weight: bold; // default, can be replaced with true font
 }
 

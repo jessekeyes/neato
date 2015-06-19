@@ -68,12 +68,7 @@ module.exports = function(grunt) {
     },
     cssmin: {
       options: {
-        noAdvanced: true,
-        keepLineBreaks: true,
-        banner: '/*! <%%= pkg.title %> - v<%%= pkg.version %>\n' +
-          ' * <%%= pkg.homepage %>\n' +
-          ' * Copyright (c) <%%= grunt.template.today("yyyy") %>;' +
-          ' */\n'
+        advanced: true
       },
       minify: {
         expand: true,
@@ -91,7 +86,7 @@ module.exports = function(grunt) {
           banner: '/*! <%%= pkg.title %> - v<%%= pkg.version %>\n' +
             ' * <%%= pkg.homepage %>\n' +
             ' * Copyright (c) <%%= grunt.template.today("yyyy") %>;' +
-            ' */\n'
+            ' */\n',
           mangle: false
         },
         files: {
