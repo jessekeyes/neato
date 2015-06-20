@@ -38,7 +38,7 @@ if ( ! function_exists( '<%= themeNameSpace %>_widgets_init' ) ) :
   function <%= themeNameSpace %>_widgets_init() {
     register_sidebar(array(
       'name'          => __( 'Sidebar', '<%= themeNameSpace %>_domain' ),
-      'id'            => 'sidebar',
+      'id'            => 'sidebar-1',
       'description'   => __( 'default sidebar', '<%= themeNameSpace %>_domain' ),
       'before_widget' => '<section>',
       'after_widget' => '</section>',

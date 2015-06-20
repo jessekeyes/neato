@@ -7,8 +7,8 @@
  */
 ?>
 <aside class="sidebar">
-  <?php if ( is_active_sidebar( 'sidebar' ) ) :
-    dynamic_sidebar( 'sidebar' );
+  <?php if ( is_active_sidebar( 'sidebar-1' ) ) :
+    dynamic_sidebar( 'sidebar-1' );
   endif; ?>
   <section>
     <?php get_search_form(); ?>

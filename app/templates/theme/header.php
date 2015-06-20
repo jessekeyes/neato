@@ -32,7 +32,7 @@
 	<!--[if lte IE 7]>
 	<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> to better experience this site.</p>
 	<![endif]-->
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', '<%= themeNameSpace %>_domain' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', '<%= themeNameSpace %>_domain' ); ?></a>
 	<header class="site-header" role="banner">
 		<h1><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
 		<p class="description"><?php bloginfo('description'); ?></p>
