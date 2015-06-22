@@ -4,6 +4,7 @@
   "dependencies": {
     "bourbon": "^4.2",
     "neat": "^1.7",
+    "modernizr": "~2.8.3",
     "wp-normalize.scss": "^1.0.0"
   },
   "ignore": [
@@ -17,6 +18,9 @@
     },
     "neat": {
       "scss": "app/assets/stylesheets"
+    },
+    "modernizr": {
+      "exclude": "modernizr.js"
     },
     "wp-normalize.scss": {
       "scss": "_wp-normalize.scss"

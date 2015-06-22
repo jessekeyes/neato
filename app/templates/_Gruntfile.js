@@ -80,6 +80,22 @@ module.exports = function(grunt) {
         ext: '.min.css'
       }
     },
+    modernizr: {
+      build: {
+        'devFile' : '<%%= dirs.vendor %>/exclude/modernizr/modernizr.js',
+        'outputFile' : '<%%= dirs.src %>/js/head/modernizr.custom.js',
+        'extra' : {
+          'shiv' : true,
+          'mq' : true,
+          'cssclasses' : true
+        },
+        'extensibility' : {},
+        'uglify' : false,
+        'files' : {
+          src: [ '<%%= dirs.js %>/src/**/*.js', '<%%= dirs.src %>/**/*.scss' ]
+        }
+      }
+    },
     uglify: {
       build: {
         options: {
@@ -99,9 +115,9 @@ module.exports = function(grunt) {
   }); 
 
   // Default task(s).
-  grunt.registerTask('default', ['styles', 'scripts']);
-  grunt.registerTask('install', ['bower']);
-  grunt.registerTask('styles', ['sass', 'postcss', 'cssmin']);
-  grunt.registerTask('scripts', ['uglify']);
+  grunt.registerTask('default', ['styles', 'modernizr', 'scripts']);
+  grunt.registerTask('install', ['bower', 'default']);
+  grunt.registerTask('styles', ['sass', 'postcss', 'cssmin', 'modernizr']);
+  grunt.registerTask('scripts', ['modernizr', 'uglify']);
 
 };
