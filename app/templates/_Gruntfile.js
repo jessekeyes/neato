@@ -103,7 +103,8 @@ module.exports = function(grunt) {
             ' * <%%= pkg.homepage %>\n' +
             ' * Copyright (c) <%%= grunt.template.today("yyyy") %>;' +
             ' */\n',
-          mangle: false
+          mangle: false,
+          sourceMap: true
         },
         files: {
           '<%%= dirs.js %>/app.js': ['<%%= dirs.vendor %>/js/*', '<%%= dirs.src %>/js/**/*.js'], // main js
