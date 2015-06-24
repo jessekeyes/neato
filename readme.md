@@ -8,7 +8,6 @@ Use this generator to quickly create a starter WP theme for your project. The th
 * [Bower](http://bower.io/#install-bower) `npm install -g bower`
 * [Yeoman](http://yeoman.io/) `npm install -g yo`
 * Install the Neato yeoman generator: `npm install -g https://github.com/jessekeyes/neato/tarball/master`
-* [SASS](http://sass-lang.com/install) (Ruby Gem)
 
 ### Generating your theme
 
@@ -23,7 +22,7 @@ Use this generator to quickly create a starter WP theme for your project. The th
 Your new theme uses GruntJS to run tasks and BowerJS to manage front end packages. Here are the final steps to make your theme functional and ready for development.
 
 1. Install all necessary Node modules by running this command in your new theme dir: `npm install`
-2. Allow Grunt to set up the project dependencies (via Bower): `grunt bower`
+2. Allow Grunt to set up the project dependencies (via Bower): `grunt install`
 3. Now you're ready to begin development!
 
 ### The Workflow
