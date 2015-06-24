@@ -17,6 +17,10 @@
       <br /><a href="<?php bloginfo('rss2_url'); ?>">Entries (RSS)</a>.
       <!-- <?php echo get_num_queries(); ?> queries. <?php timer_stop(1); ?> seconds. -->
     </p>
+
+    <nav class="nav-footer">
+      <?php wp_nav_menu( array( 'theme_location' => 'primary_nav', 'container' => '') ); ?>
+    </nav>
 </footer>
 
 			   

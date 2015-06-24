@@ -36,6 +36,9 @@
 	<header class="site-header" role="banner">
 		<h1><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
 		<p class="description"><?php bloginfo('description'); ?></p>
+		<nav class="nav-header">
+			<?php wp_nav_menu( array( 'theme_location' => 'primary_nav', 'container' => '') ); ?>
+		</nav>
 	</header>
 
 	<div class="container">

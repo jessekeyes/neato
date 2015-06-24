@@ -25,6 +25,9 @@ if ( ! function_exists( '<%= themeNameSpace %>_setup' ) ) :
     <%= themeNameSpace %>_register_custom_post_types(); // ~*~ one function to rule them all ~*~
     <%= themeNameSpace %>_register_custom_taxonomies(); // ~*~ one function to rule them all ~*~
 
+    //custom menus
+    <%= themeNameSpace %>_register_menus();
+
   };
 
 endif; // <%= themeNameSpace %>_setup
@@ -32,6 +35,16 @@ endif; // <%= themeNameSpace %>_setup
 add_action( 'after_setup_theme', '<%= themeNameSpace %>_setup' );
 
 
+//****************** menus/widgets/image sizes ****************************//
+
+function <%= themeNameSpace %>_register_menus() {
+  register_nav_menus(
+    array(
+      'primary_nav' => __( 'Primary Nav' ),
+      'footer_nav' => __( 'Footer Nav' )
+    )
+  );
+}
 
 // Widgetized Sidebar HTML5 Markup - default
 if ( ! function_exists( '<%= themeNameSpace %>_widgets_init' ) ) :
@@ -59,6 +72,10 @@ remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 );
 remove_action( 'wp_head', 'start_post_rel_link', 10, 0 );
 remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
 remove_action( 'wp_head', 'feed_links_extra', 3 );
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
+remove_action( 'admin_print_styles', 'print_emoji_styles' ); 
 
 
 //****************** script reg/queue etc. *************************//
