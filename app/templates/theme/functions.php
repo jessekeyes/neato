@@ -84,11 +84,7 @@ function <%= themeNameSpace %>_scripts_styles() {
 
   if ( !is_admin() ) {
 
-    if( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) {
-      wp_enqueue_style( '<%= themeNameSpace %>', get_template_directory_uri() . "/assets/src/css/main.css", array(), NULL );
-    } else {
-      wp_enqueue_style( '<%= themeNameSpace %>', get_template_directory_uri() . "/assets/css/main.min.css", array(), NULL );
-    }
+    wp_enqueue_style( '<%= themeNameSpace %>', get_template_directory_uri() . "/assets/css/main.min.css", array(), NULL );
 
     wp_register_script( 'App', get_stylesheet_directory_uri().'/assets/js/app.js', array( 'jquery' ), 1.0, true );
     wp_enqueue_script( 'App' );
@@ -102,11 +98,7 @@ function <%= themeNameSpace %>_scripts_styles() {
 };
 
 function <%= themeNameSpace %>_admin_scripts_styles() {
-  if( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) {
-    wp_enqueue_style( '<%= themeNameSpace %>-admin', get_template_directory_uri() . "/assets/src/css/admin.css", array(), NULL );
-  } else {
-    wp_enqueue_style( '<%= themeNameSpace %>-admin', get_template_directory_uri() . "/assets/css/admin.min.css", array(), NULL );
-  }
+  wp_enqueue_style( '<%= themeNameSpace %>-admin', get_template_directory_uri() . "/assets/css/admin.min.css", array(), NULL );
 
   wp_register_script( 'Admin', get_stylesheet_directory_uri().'/assets/js/admin.js', array( 'jquery' ), 1.0, true );
   wp_enqueue_script( 'Admin' );
