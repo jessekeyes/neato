@@ -5,7 +5,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-	margin-bottom: 1.5em;
+	margin: 0 0 0 1.5em;
 }
 
 dfn,
@@ -64,6 +64,7 @@ big {
 // lists (in content)
 
 ul, ol {
+	padding: 0;
 	margin: 0 0 1.5em 3em;
 }
 
