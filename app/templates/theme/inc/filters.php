@@ -61,4 +61,5 @@ if ( ! function_exists( '<%= themeNameSpace %>_video_params' ) ) :
 
     return '<p class="video">'.$html.'</p>';
   }
+endif;
 add_filter( 'embed_oembed_html', '<%= themeNameSpace %>_video_params', 10, 3 );

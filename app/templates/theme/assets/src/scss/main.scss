@@ -1,7 +1,7 @@
 // framework bourbon : neat / wp_normalize.scss
 @import "../../vendor/scss/bourbon/bourbon";
 @import "../../vendor/scss/neat/neat";
-@import "../../vendor/scss/wp-normalize-scss";
+@import "../../vendor/scss/wp-normalize.scss/wp-normalize.scss";
 
 // framework setup and vars
 @import "settings/settings";
@@ -34,32 +34,18 @@ body>header, body>footer {
 }
 
 
-section {
-	&#main { //main content section
-		@include span-columns(8);
-	}
-	&#the-grid { 
-		@include outer-container;
-		border: #333 solid 2px;
-		div {
-			border: #ccc solid 2px;
-			&.double {
-				@include span-columns(6);
-			}
-			&.triple { 
-				@include span-columns(4);
-			}
-			&.fourths {
-				@include span-columns(3);
-				@include media($tablet) {
-					@include span-columns(4);
-					@include omega(3n);
-				}
-			}
-		}
-	}
+.site-main {
+	@include span-columns(8);
 }
 
-aside {
+.sidebar {
 	@include span-columns(4);
+}
+
+.nav-footer,
+.nav-header {
+	list-style: none;
+	li {
+		display: inline-block;
+	}
 }

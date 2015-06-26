@@ -107,7 +107,7 @@ module.exports = function(grunt) {
           sourceMap: true
         },
         files: {
-          '<%%= dirs.js %>/app.js': ['<%%= dirs.vendor %>/js/*', '<%%= dirs.src %>/js/**/*.js'], // main js
+          '<%%= dirs.js %>/app.js': ['<%%= dirs.vendor %>/js/*', '<%%= dirs.src %>/js/*.js'], // main js
           '<%%= dirs.js %>/admin.js':    [ '<%%= dirs.src %>/js/admin/**/*.js' ], // WP Admin js
           '<%%= dirs.js %>/head.js':    [ '<%%= dirs.src %>/js/head/**/*.js' ] // scripts that need to be in the head
         }

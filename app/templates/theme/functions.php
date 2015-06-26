@@ -90,7 +90,7 @@ function <%= themeNameSpace %>_scripts_styles() {
     wp_enqueue_script( 'App' );
 
     // scripts that need to be in the head, like modernizr.js
-    wp_register_script( 'headJS', get_template_directory_uri().'/assets/js/head.js', array( 'jquery' ), '1.0', false );
+    wp_register_script( 'headJS', get_template_directory_uri().'/assets/js/head.js', array( 'jquery' ), 1.0, false );
     wp_enqueue_script( 'headJS' );
 
   }
@@ -127,7 +127,7 @@ require get_template_directory() . '/inc/custom-taxonomies.php';
 require get_template_directory() . '/inc/filters.php';
 
 //****************** Admin functions *************************//
-// all functions that effect the admin screen and interface
+// all functions that affect the admin screen and interface
 require get_template_directory() . '/inc/admin.php';
 
 

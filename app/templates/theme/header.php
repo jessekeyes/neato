@@ -20,11 +20,6 @@
 	<title><?php wp_title(''); ?></title>
 	<? // favicon/icons are most reliable when put at web root, but other systems need them so generate them using http://realfavicongenerator.net ?>
 
-<!--[if lt IE 9]>
-	<script src="<?php bloginfo('template_url');?>/assets/js/vendor/html5shiv.min.js"></script>
-<![endif]-->
-
-
 <?php wp_head(); ?>
 
 </head>
