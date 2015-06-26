@@ -2,8 +2,10 @@
 
 .nav-footer,
 .nav-header {
-	list-style: none;
-	li {
-		display: inline-block;
+	ul {
+		list-style: none;
+		li {
+			display: inline-block;
+		}
 	}
 }
