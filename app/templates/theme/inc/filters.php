@@ -63,3 +63,28 @@ if ( ! function_exists( '<%= themeNameSpace %>_video_params' ) ) :
   }
 endif;
 add_filter( 'embed_oembed_html', '<%= themeNameSpace %>_video_params', 10, 3 );
+
+//****************** OPTIMIZATION: defer flag to non-blocking JS *************************//
+
+function <%= themeNameSpace_script_tag_defer($tag, $handle) {
+  // exclusions, admin and jquery and maps scripts
+  if (is_admin()){
+      return $tag;
+  }
+  if (strpos($tag, '/wp-includes/js/jquery/jquery') || strpos($tag, 'ajax.googleapis.com/ajax/libs/jquery') || strpos($tag, 'maps.googleapis.com/maps/api/js')) {
+      return $tag;
+  }
+
+  // old IE can't handle the truth!
+  if (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE 9.') !==false) {
+  return $tag;
+  }
+  if (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE 8.') !==false) {
+  return $tag;
+  }
+  // add defer
+  else {
+      return str_replace(' src',' defer src', $tag);
+  }
+}
+add_filter('script_loader_tag', '<%= themeNameSpace_script_tag_defer',10,2);

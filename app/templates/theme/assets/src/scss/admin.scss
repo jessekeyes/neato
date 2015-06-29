@@ -1,1 +1,6 @@
 // WP admin style overrides go here
+
+//fake style to fix sourcemapping bug, can be removed if true styles added
+.fake {
+	background: transparent;
+}
