@@ -30,6 +30,8 @@ get_header(); ?>
 
   <?php endif; ?>
 
+  <?php get_template_part( 'template-parts', 'pagination'); ?>
+
   </main>
 
 <?php get_sidebar(); ?>
