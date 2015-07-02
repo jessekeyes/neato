@@ -22,15 +22,13 @@ get_header(); ?>
 
     <?php endwhile; ?>
 
-    <?php get_template_part( 'template-parts', 'nav'); ?>
+    <?php get_template_part( 'template-parts', 'pagination'); ?>
 
   <?php else : ?>
 
     <?php get_template_part( 'template-parts/content', 'none' ); ?>
 
   <?php endif; ?>
-
-  <?php get_template_part( 'template-parts', 'pagination'); ?>
 
   </main>
 
